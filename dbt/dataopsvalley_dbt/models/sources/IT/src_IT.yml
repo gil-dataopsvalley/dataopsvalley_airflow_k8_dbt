@@ -3,8 +3,8 @@ version: 2
 sources:
   - name: src_IT
     description: Server list IT
-    database: dgt-gcp-egov-test-govilbi-0
-    schema: GovilBiRepDS
+    database: project-dataopsvalley-test
+    schema: dbt_rep_ds
 
     tags: ['daily', 'it']
 
@@ -32,16 +32,3 @@ sources:
             description: operating system
           - name: HD_Actual
             description: HD_Actual
-
-      - name: MRR_MappingITServerCustomerToYuval
-        description: mapping customers
-        columns:
-          - name: IT_Server
-            description: Name customer from Server Files
-            tests:
-              - unique
-              - not_null
-          - name: Yuval_Customer
-            description: Name customer from Yuval Customers
-            tests:
-              - not_null

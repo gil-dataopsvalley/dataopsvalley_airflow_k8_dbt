@@ -1,0 +1,18 @@
+# .dbtignore
+
+# ignore individual .py files
+# not-a-dbt-model.py
+# another-non-dbt-model.py
+
+
+# ignore all .py files
+# *.py
+
+# ignore all .py files with "codegen" in the filename
+# *codegen*.py
+*La_*
+La.yml
+mac_for_loop_null_values.sql
+z_DataOps_loop_for_null_values.sql
+*Absorption_and_Immigration*
+DWH_FACT_Gsoc_All_Sources.sql

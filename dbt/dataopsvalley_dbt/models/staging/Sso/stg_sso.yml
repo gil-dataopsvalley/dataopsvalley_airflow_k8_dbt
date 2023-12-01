@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_sso_by_metric
+    description: STG Sso By Metric
+    columns:
+      - name: Date
+      - name: Message
+      - name: MetricName
+      - name: CntDaily
+
+  - name: stg_sso_count_session_login
+    description: STG Sso Count Session Login
+    columns:
+      - name: Date
+      - name: CountSucces
+      - name: CountFail
+      - name: SumCountSessionId
+      - name: CntDaily
+
+
+  - name: stg_sso_web_access
+    description: STG Sso Web Access
+    columns:
+      - name: Date
+      - name: AccessedUrl
+      - name: Message
+      - name: ApplicationName
+      - name: CustomerName
+      - name: CustomerCRMCode
+      - name: StatusCode
+      - name: DnsSite
+      - name: CntDaily

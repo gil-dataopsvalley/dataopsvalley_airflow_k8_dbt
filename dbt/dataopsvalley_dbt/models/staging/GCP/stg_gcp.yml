@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_gcp_users
+    description: staging GCP all users metadata
+    columns:
+      - name: project_id
+        description: project ID
+      - name: user_type
+        description: user type (user, serviceAccount, group)
+      - name: user_and_serviceAccount_and_group
+        description: users desc
+      - name: role
+        description: user role desc
+      - name: uploaded_date
+        description: uploaded date
+
+  - name: stg_gcp_metadata
+    description: staging GCP projects' metadata
+    columns:
+      - name: project_id
+        description: project id
+      - name: project_status
+        description: project status
+      - name: department
+        description: project department
+      - name: owners_group_email
+        description: project owners_group_email
+      - name: environment
+        description: project environment
+      - name: product_name
+        description: project product_name
+      - name: merkava_purchase_order_number
+        description: project merkava_purchase_order_number
+      - name: merkava_ministry_id
+        description: project merkava_ministry_id
+      - name: ministry_name
+        description: project ministry_name
+      - name: account_name
+        description: project account_name
+      - name: owner_contact
+        description: project owner_contact

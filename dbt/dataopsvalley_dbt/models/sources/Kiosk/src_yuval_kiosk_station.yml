@@ -1,0 +1,90 @@
+version: 2
+
+sources:
+  - name: src_yuval_kiosk_station
+    description: Kiosk Station information
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'kiosk', 'yuval']
+
+    tables:
+      - name: MRR_Yuval_Kiosk_Station
+        description: Kiosk Station information
+        columns:
+          - name: createdby
+            description: created by
+          - name: createdbyname
+            description: created name
+          - name: createdbyyominame
+            description: created by yominame
+          - name: createdon
+            description: created on
+          - name: createdonbehalfby
+            description: created on behalf by
+          - name: createdonbehalfbyname
+            description: created on behalfby name
+          - name: createdonbehalfbyyominame
+            description: created on behalf byyominame
+          - name: importsequencenumber
+            description: import sequence number
+          - name: modifiedby
+            description: modified by
+          - name: modifiedbyname
+            description: modified by name
+          - name: modifiedbyyominame
+            description: modified by yominame
+          - name: modifiedon
+            description: modified on
+          - name: modifiedonbehalfby
+            description: modified on behalfby
+          - name: modifiedonbehalfbyname
+            description: modified on behalf by name
+          - name: modifiedonbehalfbyyominame
+            description: modified on behalf by yominame
+          - name: overriddencreatedon
+            description: overridden created on
+          - name: ownerid
+            description: owner id
+          - name: owneridname
+            description: owner id name
+          - name: owneridtype
+            description: owner id type
+          - name: owneridyominame
+            description: owner id yominame
+          - name: owningbusinessunit
+            description: owning business unit
+          - name: owningteam
+            description: owning team
+          - name: owninguser
+            description: owning user
+          - name: statecode
+            description: state code
+          - name: statecodename
+            description: state code name
+          - name: statuscode
+            description: status code
+          - name: statuscodename
+            description: status code name
+          - name: timezoneruleversionnumber
+            description: timezone rule version number
+          - name: utcconversiontimezonecode
+            description: utc conversion timezone code
+          - name: versionnumber
+            description: version number
+          - name: yuval_0
+            description: yuval_0
+          - name: yuval_address
+            description: yuval address
+          - name: yuval_computername
+            description: yuval computer name
+          - name: yuval_computernamename
+            description: yuval computernamename
+          - name: yuval_cord_x
+            description: yuval cord x
+          - name: yuval_cord_y
+            description: yuval cord y
+          - name: yuval_creditcardreadertype
+            description: yuval creditcard reader type
+          - name: yuval_creditcardreadertypename
+            description: yuval creditcard reader type name

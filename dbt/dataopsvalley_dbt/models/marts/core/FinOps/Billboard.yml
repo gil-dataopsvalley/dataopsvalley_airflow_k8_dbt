@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: DWH_FACT_Billboard_Daily
+    description: Daily Transactions Billboard
+    columns:
+      - name: id
+        description: concatenation of columns to represent a unique key
+        tests:
+          - unique
+          - not_null
+      - name: date
+        description: date
+      - name: service_id
+        description: service id
+      - name: service_description
+        description: service description
+      - name: sku_id
+        description: sku id
+      - name: sku_description
+        description: sku description
+      - name: net_cost
+        description: net_cost
+      - name: pricing unit
+        description: pricing unit
+      - name: amount_in_pricing_units
+        description: amount in pricing units
+      - name: invoiceMonth
+        description: invoiceMonth
+      - name: project_id
+        description: project id
+      - name: organization_id
+        description: organization id
+      - name: organization_name
+        description: organization name
+      - name: project_status
+        description: project status
+      - name: department
+        description: department
+      - name: owner_email
+        description: owner email
+      - name: environment
+        description: environment
+      - name: product_name
+        description: product name
+      - name: merkava_purchase_order_number
+        description: merkava purchase order number
+      - name: merkava_ministry_id
+        description: merkava ministry id
+      - name: ministry_name
+        description: ministry name
+      - name: account_name
+        description: account name
+      - name: owner_contact
+        description: owner contact
+      - name: product_manager_name
+        description: product manager name
+      - name: Mobile
+        description: contact mobile number
+

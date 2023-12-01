@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: src_yuval_contact
+    description: data from CRM
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'contact', 'finops']
+
+    tables:
+      - name: MRR_YuvalContact
+        description: Raw Contact data.
+        columns:
+          - name: yuval_pl_major_accountid
+            description: CustomerCRMCode - Original CRM key (GUID) of Customer
+          - name: firstname
+            description: First name of contact
+          - name: lastname
+            description: Last name of contact
+          - name: yuval_s_mobile
+            description: Mobile phone number of contact
+          - name: emailaddress1
+            description: Email address of contact
+          - name: statecode
+            description: Code 0 means active record

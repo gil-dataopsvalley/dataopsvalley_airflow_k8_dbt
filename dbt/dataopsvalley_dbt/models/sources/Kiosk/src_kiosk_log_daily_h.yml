@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: src_kiosk_log_daily_h
+    description: kiosk log daily_h
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'kiosk']
+
+    tables:
+      - name: MRR_KioskLog_Daily_H
+        description: table kiosk log daily_h
+        columns:
+          - name: date
+            description: date
+          - name: date_H
+            description: date_H
+          - name: severity
+            description: severity
+          - name: message
+            description: message
+          - name: machineName
+            description: machineName
+          - name: app
+            description: app
+          - name: module
+            description: module
+          - name: stationId
+            description: station Id
+          - name: serviceId
+            description: service Id
+          - name: cnt
+            description: cnt
+          - name: insert_date
+            description: insert date

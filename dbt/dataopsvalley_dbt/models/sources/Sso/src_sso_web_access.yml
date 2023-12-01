@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: src_sso_web_access
+    description: sso web access
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'sso']
+
+    tables:
+      - name: MRR_SSO_Web_Access
+        description: sso web access table
+        columns:
+          - name: Date
+            description: Date
+          - name: product
+            description: product
+          - name: accessed_url
+            description: accessed url
+          - name: message
+            description: message
+          - name: application_name
+            description: application name
+          - name: CntDaily
+            description: CntDaily
+          - name: LastUpdate
+            description: Last Update

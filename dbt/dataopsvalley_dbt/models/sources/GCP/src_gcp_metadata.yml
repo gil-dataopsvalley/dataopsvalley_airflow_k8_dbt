@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: src_gcp_metadata
+    description: GCP Projects Metadata
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'gcpops']
+
+    tables:
+      - name: MRR_ProjectGCP_Metadata
+        description: GCP Projects Metadata
+        columns:
+          - name: project_id
+            description: project_id
+          - name: project_status
+            description: project status
+          - name: project_labels
+            description: project labels

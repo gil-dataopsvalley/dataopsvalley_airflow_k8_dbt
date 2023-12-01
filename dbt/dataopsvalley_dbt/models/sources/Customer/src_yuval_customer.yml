@@ -1,0 +1,59 @@
+version: 2
+
+sources:
+  - name: yuval_customer
+    description: Data from MRR
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'customer']
+
+    tables:
+      - name: MRR_YuvalAccount
+        description: Raw Customer data from MRR
+        columns:
+          - name: accountid
+            description: Customer key  - Original CRM key (GUID) of Customer
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Customer name
+          - name: statuscode
+            description: 1 = Active
+          - name: statuscodename
+            description: Decode of StatusCode
+          - name: emailaddress1
+            description: Email address of customer (contact person)
+          - name: statecode
+            description: Code 0 means active record
+          - name: statecodename
+            description: Decode of statecode
+          - name: telephone1
+            description: Phone number of customer (contact person)
+          - name: websiteurl
+            description: Web site URL of customer
+          - name: yuval_lp_accountid
+            description: Parent customer key (if this is a sub customer), "accountid" in this same table
+            tests:
+              - relationships:
+                  to: source('yuval_customer', 'MRR_YuvalAccount')
+                  field: accountid
+          - name: yuval_lp_accountidname
+            description: Parent customer name (if this is a sub customer)
+          - name: yuval_lp_cioidname
+            description: Name of customer contact person
+          - name: yuval_lp_foundation_pm_systemuseridname
+            description: Name of project manager (establishment)
+          - name: yuval_lp_gov_site_managername
+            description: Name of project manager at National Digital Agency
+          - name: yuval_lp_it_maneger_systemuseridname
+            description: Name of IT manager at National Digital Agency
+          - name: yuval_lp_maintenance_pm_systemuseridname
+            description: Name of system maintainer at National Digital Agency
+          - name: yuval_pl_level
+          - name: yuval_pl_levelname
+            description: Decode of yuval_pl_level
+          - name: yuval_s_domain
+            description: Customer domain, ie CIO, MMI
+

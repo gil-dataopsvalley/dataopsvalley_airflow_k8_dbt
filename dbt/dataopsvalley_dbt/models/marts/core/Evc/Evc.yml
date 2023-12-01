@@ -1,0 +1,176 @@
+version: 2
+
+models:
+  - name: DWH_DIM_Evc_Ironswords_List_All
+    description: '{{ doc("DWH_DIM_Evc_Ironswords_List_All") }}'
+    columns:
+      - name: id_key
+        dscription: מפתח ראשי של הטבלה
+      - name: referenceNumber
+        description: מספר סימוכין
+        tests:
+          - not_null
+      - name: sentDate
+        description: תאריך שליחת טופס
+      - name: sentDateTime
+        description: שעת שליחת טופס
+      - name: SubmitterOrAccompany
+        description: מדווח או מלווה
+      - name: accompanyingRelation
+        description: סוג קרבה של המלווה
+      - name: identify_type
+        description: סוג הזדהות
+      - name: id
+        description: תעודת זהות
+        tests:
+          - not_null
+          - unique:
+              config:
+                severity: warn
+      - name: birthYear
+        description: שנת לידה
+      - name: age
+        description: גיל
+      - name: AgeGroup
+        description: תווך גילאים
+      - name: Child_Adult
+        description: ילד\מבוגר
+      - name: gender
+        description: מין - זכר\נקבה
+      - name: fromCity
+        description: שם היישוב ממנו התפנו
+      - name: dateHome
+        description: תאריך הפינוי מהבית
+      - name: shelterTypeLong
+        description: סוג מקום שהייה
+      - name: shelterCityUnion
+        description: שם העיר בה נמצא מקום השהייה
+      - name: shelterType
+        description: סוג מקום שהייה
+      - name: shelterName
+        description: שם מקום השהייה
+      - name: shelterNameElse
+        description: אחר - הזנה ידנית של מקום השהייה
+      - name: detail
+        description: פרטים נוספים על מקום השהייה
+      - name: bankAccount
+        description: פרטי חשבון בנק
+      - name: ifPregnant
+        description: האם המפונה בהריון? כן\לא
+      - name: ifAccessible
+        description: האם מקום השהייה נגיש? כן\לא
+      - name: EvacuationDate
+        description: תאריך הפינוי מהיישוב
+      - name:  Distance
+        description: מרחק היישוב מהגבול
+
+
+
+  - name: DWH_DIM_Evc_Ironswords_Absorption_and_Immigration
+    description: '{{ doc("DWH_DIM_Evc_Ironswords_Absorption_and_Immigration") }}'
+    columns:
+      - name: id
+        description: תעודת זהות
+        tests:
+          - not_null
+          - unique:
+              config:
+                severity: warn
+      - name: immigrationYear
+        description: שנת עלייה
+      - name: originCountry
+        description: ארץ מקור
+      - name: translationAssistance
+        description: עזרה בתרגום? כן\לא
+      - name: language
+        description: שפת מתרגם
+      - name: economicHardship
+        description: צריך עזרה כלכלית? כן\לא
+      - name: detail
+        description: פרטים וסיבות אם צריך עזרה כלכלית
+      - name: employment
+        description: שכיר\עצמאי
+      - name: workplace
+        description: מקום עבודה
+      - name: halat
+        description: חל"ת
+      - name: activeBusiness
+        description: עסק פעיל? כן\לא
+      - name: detailActive
+        description: פרטים והסברים על העסק
+      - name: getToBusiness
+        description: get To Business
+      - name: appliedBefore
+        description: הוגש בעבר? כן\לא
+      - name: appliedAnswer
+        description: applied Answer
+      - name: referenceNumber
+        description: מספר סימוכין
+        tests:
+          - not_null
+          - unique:
+              config:
+                severity: warn
+      - name: sentDateTime
+        description: תאריך ושעת שליחת הטופס
+      - name: sentDate
+        description: תאריך שליחת הטופס
+
+
+  - name: DWH_DIM_Evc_TownsPopulation
+    description: DWH DIM Evc TownsPopulation
+    columns:
+        - name: SettelmentSymbolNumber
+          description: מספר סמל יישוב
+        - name: SettelmentName
+          description:  שם יישוב
+        - name: CouncilFullName
+          description:  שם מלא של מועצה
+        - name: TotalPopulation
+          description: כמות תושבים
+        - name: IsEvacuated
+          description: האם היישוב פונה?
+        - name: EvacuationDate
+          description: תאריך פינוי
+        - name: Distance
+          description: מרחק מהגבול
+
+  - name: DWH_FACT_Evc_Destination_City_Analysis
+    description: DWH FACT Evc Destination City Analysis
+    columns:
+      - name: shelterCityUnion
+        description: שם עיר מקלט
+      - name: CouncilFullName
+        description: שם מועצה
+      - name: TotalPopulation
+        description:  סה"כ תושבים
+      - name: EvacuatedPopulation
+        description: סה"כ מפונים שנקלטו
+
+  - name: DWH_FACT_Evc_Source_City_Analysis
+    description: DWH FACT Evc Source City Analysis
+    columns:
+      - name: fromCity
+        description: שם העיר המפונה
+      - name: CouncilFullName
+        description:  שם המועצה
+      - name: TotalPopulation
+        description: כמות תושבים
+      - name: EvacuatedPopulation
+        description: כמות מפונים
+
+  - name: DWH_FACT_Evc_Source_Destination_Cities
+    description: DWH FACT Evc Source Destination Cities
+    columns:
+      - name: fromCity_code
+        description: קוד עיר מפונה
+      - name: fromCity
+        description: שם עיר מפונה
+      - name: shelterCityUnion
+        description: שם עיר מקלט
+      - name: Child_Adult
+        description:  מבוגר\ילד
+      - name: Musdar_Count
+        description:  כמות תושבים שהתפנו למקלט מוסדר
+      - name: NotMusdar_Count
+        description: כמות תושבים שהתפנו למקלט לא מוסדר

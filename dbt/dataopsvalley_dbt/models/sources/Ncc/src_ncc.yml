@@ -1,0 +1,223 @@
+version: 2
+
+sources:
+  - name: src_ncc
+    description: גיליון בקרת תקציבים
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'ncc']
+
+    tables:
+      - name: MRR_Ncc_ControlBudeget
+        description: גיליון בקרת תקציבים
+        columns:
+          - name: office
+            description: שם המשרד
+          - name: project_name
+            description: שם הפרויקט
+          - name: the_project_budget
+            description: תקציב הפרויקט
+          - name: timruth_budget
+            description: תקציב תמרוץ
+          - name: office_budget__matching_
+            description:  תקציב משרדי (מאצ'ינג)
+          - name: budget__incentive___office_
+            description: תקציב (תמרוץ+משרדי)
+          - name: does_the_project_budget___incentive___office
+            description: האם תקציב הפרוייקט=תמרוץ+משרדי
+          - name: making_a_cash_budget_rush
+            description: ביצוע מזומן תקציב תמרוץ
+          - name: making_an_office_budget
+            description: ביצוע תקציב משרדי
+          - name: total_liabilities
+            description: סך התחיבויות
+          - name: timrutz_budget_commitments
+            description: התחייבות תקציב תמרוץ
+          - name: office_budget_commitments__matching_
+            description: התחייבות תקציב משרדי (מאצ'ינג)
+          - name: cash_execution_percentage_from_timrutz_budget
+            description: אחוז ביצוע מזומן מתוך תקציב התמרוץ
+          - name: percentage_of_cash_execution_from_office_budget__matching_
+            description:  אחוז ביצוע מזומן מתוך תקציב משרדי (מאצ'ינג)
+          - name: commitment_fulfillment_percentage_from_office_budget__matching_
+            description:  אחוז ביצוע התחייבות מתוך תקציב משרדי (מאצ'ינג)
+          - name: percentage_of_fulfillment_of_commitment_from_timrutz_budget
+            description:  אחוז ביצוע התחייבות מתוך תקציב התמרוץ
+          - name: remarks
+            description: הערות
+
+
+      - name: MRR_Ncc_Milestones
+        description: אבני דרך
+        columns:
+          - name: milestone_number
+            description: מספר אבן דרך
+          - name: milestone_description
+            description: תיאור אבן דרך
+          - name: milestone_budget
+            description: תקציב אבן דרך
+          - name: milestone_execution_status
+            description: סטטוס ביצוע אבן הדרך
+          - name: execution_date
+            description: תאריך ביצוע
+          - name: filename
+            description: FileName
+
+      - name: MRR_Ncc_Office_BarriersChallenges
+        description: "add description"
+        columns:
+          - name: name_of_the_office
+            description: "add description"
+          - name: barriers
+            description: "add description"
+
+      - name: MRR_Ncc_Office_Data
+        description: "add description"
+        columns:
+          - name: name_of_the_office
+          - name: the_size_of_the_office
+          - name: initiation_score
+          - name: planning_grade
+          - name: readiness_score
+          - name: realization_score
+          - name: operating_potential_score
+          - name: specify_maintenance_and_optimization_potential
+          - name: weighted_score
+          - name: office_motivation_score
+          - name: tsion_independence_of_the_office_in_the_journey_to_the_cloud
+          - name: specify_the_ability_to_deal_with_the_barriers
+          - name: human_capital_score
+          - name: optimal_assignment_score
+          - name: block_planning__management_and_budget_execution__including_finops_
+          - name: hashem_level_of_organizational_knowledge_and_training
+          - name: block_recruitment_of_personnel
+          - name: procurement_block_and_supplier_management
+          - name: block_the_commitment_of_the_office_management
+          - name: technological_barrier___technical
+          - name: block_landing_zone
+          - name: block_information_security
+          - name: block_1
+          - name: block_2
+          - name: block_3
+          - name: block_4
+          - name: block_5
+
+      - name: MRR_Ncc_Office_GapFindings
+        description: "add description"
+        columns:
+          - name: name_of_the_office
+            description: "add description"
+          - name: office_size
+            description: "add description"
+          - name: gaps
+            description: "add description"
+
+      - name: MRR_Ncc_Office_QuestionsAndAnswers
+        description: "add description"
+        columns:
+          - name: name_of_the_office
+            description: "add description"
+          - name: office_size
+            description: "add description"
+          - name: topic
+            description: "add description"
+          - name: sub-theme
+            description: "add description"
+          - name: questions
+            description: "add description"
+          - name: answers
+            description: "add description"
+
+      - name: MRR_Ncc_Office_Rating
+        description: "add description"
+        columns:
+          - name: name_of_the_office
+            description: "add description"
+          - name: the_size_of_the_office
+            description: "add description"
+          - name: weighted_score
+            description: "add description"
+          - name: position_by_size
+            description: "add description"
+          - name: cluster_size
+            description: "add description"
+          - name: general_location
+            description: "add description"
+          - name: general_cluster
+            description: "add description"
+
+      - name: MRR_Ncc_ProjectAssistance
+        description: כלי סיוע לקידום הפרויקט
+        columns:
+          - name: filename
+            description: FileName
+          - name: tools_or_assistance
+            description: כלים/סיוע
+          - name: used_or_not_used
+            description: נעשה שימוש/לא נעשה שימוש
+
+      - name: MRR_Ncc_projectControlsubChallenge
+        description: תת אתגרים - בקרת פרויקטים
+        columns:
+          - name: layer
+            description: רובד
+          - name: problem_description
+            description: תיאור הבעיה
+          - name: the_names_of_the_offices
+            description: שמות המשרדים
+
+      - name: MRR_Ncc_projectDetail
+        description: ריכוז אתגרים וחסמים
+        columns:
+          - name: office_name
+            description: שם משרד
+          - name: project_name
+            description: שם פרויקט
+          - name: a_major_challenge
+            description: אתגר מרכזי
+          - name: sub_challenge
+            description: תת אתגר
+          - name: sub_sub_challenge
+            description: תת תת אתגר
+          - name: what_is_taken_into_account
+            description: מה נלקח בחשבון
+          - name: exists__v__or_does_not_exist__blank_
+            description: קיים (V) / לא קיים (ריק)
+
+      - name: MRR_Ncc_ProjectName
+        description: שם פרויקט
+        columns:
+          - name: filename
+            description: שם קובץ
+          - name: name_of_the_office
+            description: שם המשרד
+          - name: project_name
+            description: שם הפרויקט
+
+      - name: MRR_Ncc_projectStepCloud
+        description: שלבים במסע לענן
+        columns:
+          - name: f1
+          - name: f2
+          - name: filename
+
+      - name: MRR_Ncc_projectTime
+        description: לוחות זמנים
+        columns:
+          - name: filename
+            description: שם קובץ
+          - name: updated_date_for_the_end_of_the_project
+            description: מועד מעודכן לסיום הפרויקט
+          - name: planned_date_for_the_end_of_the_project
+            description: מועד מתוכנן לסיום הפרויקט
+          - name: project_start_date
+            description: מועד תחילת הפרויקט
+
+      - name: MRR_Ncc_SizeOffice
+        description: גודל משרדים
+        columns:
+          - name: office_name
+            description: שם המשרד
+          - name: size
+            description: גודל המשרד

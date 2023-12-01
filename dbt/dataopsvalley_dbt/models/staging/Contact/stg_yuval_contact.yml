@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_yuval_contact
+    description: Staged contact data from MRR, filtered for only active records (stateCode = 0)
+    columns:
+      - name: CustomerCRMCode
+        description: CustomerCRMCode (UUID)
+        tests:
+          - not_null
+          - relationships:
+              # In the source there are records of inactive contacts which are filtered out in the staging stage, and that is the reason for testing relations in the staging and not in the source
+              to: ref('DWH_DIM_YuvalCustomer')
+              field: CustomerCRMCode
+      - name: FirstName
+        description: First name of contact
+      - name: LastName
+        description: Last name of contact
+      - name: Mobile
+        description: Mobile phone number of contact
+      - name: ContactEmail
+        description: Email address of contact

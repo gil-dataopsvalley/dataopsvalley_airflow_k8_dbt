@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: stg_billboard_daily_gcp_metadata
+    description: Staged Daily Transactions Billboard
+    columns:
+        - name: date
+          description: date
+        - name: service_id
+          description: service_id
+        - name: service_description
+          description: service_description
+        - name: sku_id
+          description: sku_id
+        - name: sku_description
+          description: sku_description
+        - name: net_cost
+          description: net_cost
+        - name: pricing_unit
+          description: pricing_unit
+        - name: amount_in_pricing_units
+          description: amount_in_pricing_units
+        - name: invoiceMonth
+          description: invoiceMonth
+        - name: project_id
+          description: project_id
+        - name: organization_id
+          description: organization_id
+        - name: organization_name
+          description: organization_name
+        - name: project_status
+          description: project_status
+        - name: department
+          description: department
+        - name: owner_email
+          description: owner_email
+        - name: environment
+          description: environment
+        - name: product_name
+          description: product_name
+        - name: merkava_purchase_order_number
+          description: merkava_purchase_order_number
+        - name: merkava_ministry_id
+          description: merkava_ministry_id
+        - name: ministry_name
+          description: ministry_name
+        - name: account_name
+          description: account_name
+        - name: owner_contact
+          description: owner_contact
+        - name: product_manager_name
+          description: product manager name
+        - name: Mobile
+          description: contact mobile number

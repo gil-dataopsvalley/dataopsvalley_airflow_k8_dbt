@@ -1,0 +1,27 @@
+select 
+    filename,                                                  
+    office_name,
+    project_name,
+    updated_date_for_the_end_of_the_project,
+    planned_date_for_the_end_of_the_project,
+    project_start_date,
+    delay_status, 
+    Isdelayed,   
+    office_budget_matching,
+    project_budget,
+    incentive_budget,
+    incentive_budget_commitment,
+    office_budget_commitment_matching,
+    total_commitments,
+    percentage_cash_used_from_incentive_budget,
+    percentage_office_budget_used_matching,
+    percentage_commitment_used_from_office_budget_matching,
+    percentage_commitment_used_from_incentive_budget,
+    cash_used_from_incentive_budget,
+    total_actual_project_budget,
+    period,
+    period_number,
+    remarks,
+    {{ isnull_he_string('office_size') }} as office_size
+
+from {{ ref('stg_ncc_dim_project') }}

@@ -1,0 +1,101 @@
+version: 2
+
+models:
+  - name: DWH_FACT_Gsoc_All_Sources
+    description: DWH Gsoc all sources
+    columns:
+        - name: Platform
+          description: Platform
+        - name: Datetime
+          description: Date time
+        - name: GroupName
+          description: Group Name
+        - name: KeyWord
+          description: Key Word
+        - name: Severity
+          description: Severity
+        - name: Message
+          description: Message
+        - name: Date
+          description: Date
+        - name: Time
+          description: Time
+        - name: Title
+          description: Title
+        - name: Related_Entities
+          description: Related Entities
+        - name: Category
+          description: Category
+        - name: Credential_Details
+          description: Credential Details
+        - name: Link
+          description: Link
+        - name: WeekDay
+          description: Week Day
+        - name: MonthDesc
+          description: Month Desc
+
+  - name: DWH_FACT_Gsoc_Message_Telebot_ClearNet_DarkNet
+    description: DWH Gsoc message telebot clearnet darknet
+    columns:
+      - name: Platform
+        description: Platform
+      - name: Datetime
+        description: Datetime
+      - name: NumOfGroups
+        description: NumOfGroups
+      - name: GroupNames
+        description: GroupNames
+      - name: Link
+        description: Link
+      - name: KeyWord
+        description: KeyWord
+      - name: Severity
+        description: Severity
+      - name: Message
+        description: Message
+      - name: Date
+        description: Date
+      - name: Time
+        description: Time
+      - name: WeekDay
+        description: WeekDay
+      - name: MonthDesc
+        description: MonthDesc
+      - name: IsCurrentDay
+        description: IsCurrentDay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

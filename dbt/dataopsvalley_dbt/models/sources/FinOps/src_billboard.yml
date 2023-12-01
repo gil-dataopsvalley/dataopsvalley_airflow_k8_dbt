@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: src_billboard
+    description: Transactions Billboard
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'finops']
+
+    tables:
+      - name: billboard
+        description: Transactions Billboard
+        columns:
+          - name: date
+            description: date
+          - name: service.id
+            description: service id
+          - name: service.description
+            description: service description
+          - name: sku.id
+            description: sku id
+          - name: sku.description
+            description: sku description
+          - name: billing_account_id
+            description: billing account id
+          - name: project.ancestors
+            description: project metadata
+          - name: net_cost
+            description: net_cost
+          - name: usage.pricing_unit
+            description: pricing_unit
+          - name: usage.amount_in_pricing_units
+            description: amount in pricing units
+          - name: invoice.month
+            description: invoice month
+          - name: project.id
+            description: project Id
+          - name: project.name
+            description: project name
+          - name: project.number
+            description: project number

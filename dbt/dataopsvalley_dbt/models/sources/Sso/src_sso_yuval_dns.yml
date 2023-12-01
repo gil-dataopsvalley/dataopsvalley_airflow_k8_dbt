@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: src_sso_yuval_dns
+    description: sso yuval dns
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'sso']
+
+    tables:
+      - name: MRR_SSO_Yuval_Dns
+        description: sso yuval dns table
+        columns:
+          - name: DnsSite
+            description: Dns Site
+          - name: DnsUrl
+            description: Dns Url
+          - name: customer
+            description: customer
+          - name: StatusCode
+            description: Status Code
+          - name: StatusName
+            description: Status Name

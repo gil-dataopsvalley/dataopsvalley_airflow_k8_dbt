@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: DWH_DIM_YuvalCustomer
+    description: DWH customer data
+    columns:
+      - name: CustomerCRMCode
+        description: Customer key  - Original CRM key (GUID) of Customer
+        tests:
+          - unique
+          - not_null
+      - name: CustomerName
+        description: Customer name
+      - name: StatusCode
+        description: 1 = Active
+      - name: StatusCodeName
+        description: Decode of StatusCode
+      - name: Email
+        description: Email address of customer (contact person)
+      - name: StateCode
+        description: Code 0 means active record
+      - name: StateName
+        description: Decode of statecode
+      - name: Telephone
+        description: Phone number of customer (contact person)
+      - name: WebSiteUrl
+        description: Web site URL of customer
+      - name: ParentCustomerCRMCode
+        description: Parent customer key (if this is a sub customer), "accountid" in this same table
+        tests:
+          - relationships:
+              to: source('yuval_customer', 'MRR_YuvalAccount')
+              field: accountid
+              config:
+                # description: there is 1 "unknown" record which was added manually in the staging stage ('stg_yuval_customer') and does not appear in the source table ('src_yuval_customer')
+                severity: error
+                error_if: ">1"
+                warn_if: "!=1"
+      - name: ParentCustomerName
+        description: Parent customer name (if this is a sub customer)
+      - name: ManmarContactName
+        description: Name of customer contact person
+      - name: ManapHakamaSystemUserName
+        description: Name of project manager (establishment)
+      - name: SiteManagerSystemUserName
+        description: Name of project manager at National Digital Agency
+      - name: ManapITSystemUserName
+        description: Name of IT manager at National Digital Agency
+      - name: ManapTachzukaSystemUserName
+        description: Name of system maintainer at National Digital Agency
+      - name: LevelId
+      - name: LevelIdName
+        description: Decode of yuval_pl_level
+      - name: Domain
+        description: Customer domain, ie CIO, MMI
+      - name: UpdateDate
+        description: Current date/time when the record was created

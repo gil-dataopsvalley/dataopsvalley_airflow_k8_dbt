@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: src_ecom_services
+    description: ecom services by type
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'ecom']
+
+    tables:
+      - name: MRR_Ecom_Services
+        description: Raw finance transactions data
+        columns:
+          - name: ServiceCode
+            description: Service Code
+          - name: ServiceDesc
+            description: Service Description
+          - name: TypeService
+            description: Service Type
+

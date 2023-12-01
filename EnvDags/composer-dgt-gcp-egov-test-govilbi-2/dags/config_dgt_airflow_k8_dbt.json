@@ -1,0 +1,8 @@
+{
+  "Tag_Version": "1.4.0",
+  "ProjectGCP_Id": "dgt-gcp-egov-test-govilbi-0",
+  "artifact_registry": "me-west1-docker.pkg.dev",
+  "registry_ProjectName": "dataops-doker-dbt-repo",
+  "Dbt_project_Name": "dgt_govil_dbt"
+
+}

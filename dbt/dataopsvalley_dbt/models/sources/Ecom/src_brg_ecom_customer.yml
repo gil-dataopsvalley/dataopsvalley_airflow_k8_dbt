@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: src_brg_ecom_customer
+    description: Bridge table for CustomerPayCode to CustomerCRMCode
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiDwhDS
+
+    tags: ['daily', 'ecom']
+
+    tables:
+      - name: DWH_BRG_Ecom_Customer
+        description: Bridge table for CustomerPayCode to CustomerCRMCode
+        columns:
+          - name: CustomerPayCode
+            description: Customer pay code
+            test:
+              - unique
+              - not_null
+          - name: CustomerCRMCode
+            description: Customer CRM code

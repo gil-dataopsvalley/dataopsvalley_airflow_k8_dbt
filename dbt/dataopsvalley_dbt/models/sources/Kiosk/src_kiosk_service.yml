@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: src_kiosk_services
+    description: kiosk services
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'kiosk']
+
+    tables:
+      - name: MRR_Kiosk_Services
+        description: kiosk_services table
+        columns:
+          - name: OfficeId
+            description: Office Id
+          - name: BackOfficeDisplayName
+            description: BackOfficeDisplayName
+          - name: ServiceIndex
+            description: Service Index
+          - name: ServiceName
+            description: Service Name
+          - name: ServiceId
+            description: Service Id
+          - name: ServiceType
+            description: Service Type
+          - name: ChildCatalogs
+            description: ChildCatalogs
+          - name: SecondServiceType
+            description: Second Service Type
+          - name: ServiceActionTypeId
+            description: Service Action TypeId
+          - name: IsWeb
+            description: Is Web
+          - name: Status
+            description: Status
+          - name: IsBI
+            description: Is BI

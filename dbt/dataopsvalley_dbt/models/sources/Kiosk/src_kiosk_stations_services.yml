@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: src_kiosk_stations_services
+    description: kiosk stations services
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'kiosk']
+
+    tables:
+      - name: MRR_Kiosk_StationsServices
+        description: kiosk stations services table
+        columns:
+          - name: StationIndex
+            description: Station Index
+          - name: BackOfficeDisplayName
+            description: BackOffice Display Name
+          - name: ServiceIndex
+            description: Service Index
+          - name: DisplayName
+            description: DisplayName
+          - name: StationsTypeId
+            description: StationsTypeId
+          - name: StationsTypeDisplayName
+            description: Stations Type DisplayName
+          - name: AD_Status
+            description: AD Status

@@ -1,0 +1,268 @@
+
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: 'dbt_k8_dgt'
+version: '1.0.0'
+config-version: 2
+
+# This setting configures which "profile" dbt uses for this project.
+profile: 'dbt_k8_dgt'
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+# In this example config, we tell dbt to build all models in the example/ directory
+# as tables. These settings can be overridden in the individual model files
+# using the `{{ config(...) }}` macro.
+models:
+  dbt_k8_dgt:
+    # Config indicated by + and applies to all files under models/example/
+
+    staging:
+      +docs:
+        node_color: "gray"
+      +tags:
+        - "staging"
+      +materialized: ephemeral
+      Calendar:
+        +tags:
+          - "finops"
+          - "calendar"
+          - "dynatrace"
+      Contact:
+        +tags:
+          - "daily"
+          - "contact"
+          - "finops"
+          - "yuval"
+      Customer:
+        yuval_customers:
+          +tags:
+            - "daily"
+            - "customer"
+            - "yuval"
+      IT:
+        Server:
+          +tags:
+            - "daily"
+            - "it"
+          +labels:
+            project: "it"
+      FinOps:
+        +tags:
+          - "finops"
+        +labels:
+          project: "finops"
+      GCP:
+        +tags:
+          - "gcpops"
+        +labels:
+          project: "gcpops"
+      Dynatrace:
+        +tags:
+          - "dynatrace"
+          - "yuval"
+        +labels:
+          project: "dynatrace"
+      Ecom:
+        +tags:
+          - "ecom"
+        +labels:
+          project: "ecom"
+      Kiosk:
+        +tags:
+          - "kiosk"
+          - "yuval"
+        +labels:
+          project: "kiosk"
+      Sso:
+        +tags:
+          - "daily"
+          - "sso"
+        +labels:
+          project: "sso"
+      DigitalLiteracy:
+        +tags:
+          - "daily"
+          - "diglit"
+        +labels:
+          project: "digital_literacy"
+      Ncc:
+        +tags:
+          - "ncc"
+        +labels:
+          project: "ncc"
+        #      La:
+#        +tags:
+#          - "la"
+#        +labels:
+#          project: "la"
+      Gsoc:
+        +tags:
+          - "gsoc"
+        +labels:
+          project: "gsoc"
+      Evc:
+        +tags:
+          - "evc"
+        +labels:
+          project: "evc"
+      Emun:
+        +tags:
+          - "emun"
+        +labels:
+          project: "emun"
+
+
+    marts:
+      +docs:
+        node_color: "blue"
+      #       general_reports:
+#         +materialized: view
+#         +tags:
+#           - "reports"
+      core:
+        +tags: "core"
+        +materialized: table
+        Calendar:
+          +tags:
+            - "finops"
+            - "calendar"
+            - "dynatrace"
+        Contact:
+          +tags:
+            - "daily"
+            - "contact"
+            - "finops"
+            - "yuval"
+          +labels:
+            project: "contact"
+        Customer:
+          +tags:
+            - "daily"
+            - "customer"
+            - "yuval"
+          +labels:
+            project: "contact"
+          +docs:
+            node_color: "#4169E1"
+        IT:
+          Server:
+            +tags:
+              - "daily"
+              - "it"
+            +labels:
+              project: "it"
+            +docs:
+              node_color: "#8A2BE2"
+        FinOps:
+          +tags:
+            - "finops"
+          +labels:
+            project: "finops"
+          +docs:
+            node_color: "#B22222"
+        GCP:
+          +tags:
+            - "gcpops"
+          +labels:
+            project: "gcpops"
+          +docs:
+            node_color: "#FF0000"
+        Dynatrace:
+          +tags:
+            - "dynatrace"
+            - "yuval"
+          +labels:
+            project: "dynatrace"
+          +docs:
+            node_color: "#FA8072"
+        Ecom:
+          +tags:
+            - "ecom"
+          +labels:
+            project: "ecom"
+          +docs:
+            node_color: "#FF6347"
+        Kiosk:
+          +tags:
+            - "yuval"
+            - "kiosk"
+          +labels:
+            project: "kiosk"
+        +docs:
+          node_color: "#4169E1"
+        Sso:
+          +tags:
+            - "daily"
+            - "sso"
+          +labels:
+            project: "sso"
+          +docs:
+            node_color: "#0000FF"
+        DigitalLiteracy:
+          +tags:
+            - "daily"
+            - "diglit"
+          +labels:
+            project: "digital_literacy"
+          +docs:
+            node_color: "#9400D3"
+        DataOps_Operation:
+          +tags:
+            - "dataops"
+          +docs:
+            node_color: "#FF00FF"
+        Ncc:
+          +tags:
+            - "ncc"
+          +labels:
+            project: "ncc"
+          +docs:
+            node_color: "#DC143C"
+#        La:
+#          +tags:
+#            - "la"
+#          +labels:
+#            project: "la"
+        Gsoc:
+          +tags:
+            - "gsoc"
+          +labels:
+            project: "gsoc"
+          +docs:
+              node_color: "#4169E1"
+        Evc:
+          +tags:
+            - "evc"
+          +labels:
+            project: "evc"
+          +docs:
+            node_color: "#FFD700"
+        Emun:
+          +tags:
+            - "emun"
+          +labels:
+            project: "emun"
+          +docs:
+            node_color: "#FFA500"
+
+tests:
+  +store_failures: true
+  +schema: dbt_test_failures

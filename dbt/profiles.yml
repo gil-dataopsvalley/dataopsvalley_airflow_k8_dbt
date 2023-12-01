@@ -1,0 +1,70 @@
+dbt_k8_dgt:
+  outputs:
+    # This profile is for exec local pc with service-account to DEV
+    DevServiceAccount:
+      type: bigquery
+      method: service-account
+      project: govilgil
+      dataset: dgt_govil_dbt_stg
+      threads: 1
+      keyfile: 'C:\Users\gilc\.dbt\keyfile_DevServiceAccount.json'
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1
+    # This profile is for exec local pc with service-account to TEST
+    TestDockerK8_old:
+      type: bigquery
+      dataset: dgt_govil_dbt_stg_eu
+      fixed_retries: 1
+      location: me-west1
+      method: oauth
+      priority: interactive
+      project: dgt-gcp-egov-test-govilbi-0
+      threads: 5
+      timeout_seconds: 300
+      impersonate_service_account: dbt-user@dgt-gcp-egov-test-govilbi-0.iam.gserviceaccount.com
+    # This profile is for production / Composer environment
+    TestDockerK8:
+      type: bigquery
+      #method: service-account
+      method: oauth
+      project: dgt-gcp-egov-test-govilbi-0  # name of the project in BigQuery
+      dataset: GovilBiDwhDS
+      threads: 1
+      impersonate_service_account: dbt-user@dgt-gcp-egov-test-govilbi-0.iam.gserviceaccount.com
+      fixed_retries: 1
+      location: me-west1
+      priority: interactive
+      timeout_seconds: 300
+    # This profile is for exec local pc with OAUTH to TEST
+    TestAuth:
+      type: bigquery
+      method: oauth
+      project: dgt-gcp-egov-test-govilbi-0
+      location: me-west1
+      dataset: GovilBiDwhDS # You can also use "schema" here
+      threads: 1
+    dev:
+      type: bigquery
+      method: service-account
+      project: dgt-gcp-egov-test-govilbi-0  # name of the project in BigQuery
+      dataset: GovilBiDwhDS  # your dataset for development (usually your name)
+      threads: 4
+      keyfile: /secrets/dbt-service-keyfile
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1
+      location: me-west1
+    prod: # your production environment
+      type: bigquery
+      method: service-account
+      project: dgt-gcp-egov-prod-govilbi-0  # name of the project in BigQuery
+      dataset: GovilBiDwhDS  # your dataset for production
+      threads: 4
+      keyfile: /secrets/dbt-service-keyfile
+      timeout_seconds: 300
+      priority: interactive
+      retries: 1
+# For local execution (dev), use TestAuth
+# For cloud execution, use TestDockerK8
+  target: TestDockerK8

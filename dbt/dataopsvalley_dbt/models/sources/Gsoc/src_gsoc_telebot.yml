@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: src_gsoc_telebot
+    description: gsoc telebot
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'gsoc']
+
+    tables:
+      - name: MRR_Gsoc_TeleBOT
+        description: gsoc telebot table
+        columns:
+          - name: Event
+            description: Event
+          - name: GroupName
+            description: Group Name
+          - name: KeyWord
+            description: KeyWord
+          - name: Message
+            description: Message
+          - name: Datetime
+            description: Datetime
+          - name: Link
+            description: Link
+          - name: Severity
+            description: Severity
+          - name: Platform
+            description: Platform
+          - name: Date
+            description: Date
+          - name: Time
+            description: Time
+          - name: TranslatedMessage
+            description: TranslatedMessage
+          - name: SourceLanguage
+            description: SourceLanguage

@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: src_gsoc_darknet
+    description: gsoc darknet
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'gsoc']
+
+    tables:
+      - name: MRR_Gsoc_DarkNet
+        description: gsoc darknet table
+        columns:
+          - name: Event
+            description: Event
+          - name: KeyWord
+            description: KeyWord
+          - name: Message
+            description: Message
+          - name: Datetime
+            description: Datetime
+          - name: Link
+            description: Link
+          - name: Severity
+            description: Severity
+          - name: TranslatedMessage
+            description: TranslatedMessage
+          - name: SourceLanguage
+            description: SourceLanguage
+          - name: Platform
+            description: Platform
+          - name: GroupName
+            description: GroupName
+          - name: Date
+            description: Date
+          - name: Time
+            description: Time
+
+

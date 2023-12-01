@@ -1,0 +1,26 @@
+select
+    user_hash,
+    created_at,
+    source_name,
+    before_after,
+    gender,
+    age,
+    consumption,
+    finance,
+    health,
+    civ,
+    communication,
+    fun,
+    population,
+    supplier_name,
+    course_type,
+    course_subject,
+    starting_date,
+    place,
+    device,
+    teaching_method,
+    teacher_name,
+    Attribute,
+    Value
+
+from {{ ref('stg_digital_literacy_satisfaction') }}

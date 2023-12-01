@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: src_kiosk_offices
+    description: kiosk offices
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'kiosk']
+
+    tables:
+      - name: MRR_Kiosk_Offices
+        description: kiosk offices table
+        columns:
+          - name: OfficeId
+            description: Office Id
+          - name: BackOfficeDisplayName
+            description: Back Office Display Name
+          - name: YuvalGuid
+            description: Yuval Guid

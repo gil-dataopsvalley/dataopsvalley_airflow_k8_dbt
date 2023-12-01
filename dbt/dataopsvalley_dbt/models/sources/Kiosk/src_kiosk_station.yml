@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: src_kiosk_station
+    description: kiosk station
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'kiosk']
+
+    tables:
+      - name: MRR_Kiosk_Stations
+        description: kiosk station table
+        columns:
+          - name: BackOfficeDisplayName
+            description: BackOffice Display Name
+          - name: StationIndex
+            description: Station Index
+          - name: LastUpdate
+            description: LastUpdate
+          - name: AD_Status
+            description: AD Status
+          - name: LastStationCheck
+            description: Last Station Check
+          - name: DisplayName
+            description: Display Name
+          - name: PlaceDescription
+            description: Place Description
+          - name: ironNnumber
+            description: ironNnumber
+          - name: StationTypeID
+            description: Station Type ID
+          - name: LoadingResponsibilityID
+            description: Loading Responsibility ID
+          - name: ExternalID
+            description: External ID
+          - name: PayingFactorId
+            description: Paying Factor Id
+          - name: IsBI
+            description: Is BI

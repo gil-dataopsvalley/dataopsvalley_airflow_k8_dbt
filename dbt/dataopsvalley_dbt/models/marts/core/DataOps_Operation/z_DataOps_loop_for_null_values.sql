@@ -1,0 +1,11 @@
+--
+--{% set tables = get_column_values('table_id', ref('stg_ds_tables')) %}
+--
+--{{ log("Tables: " ~ tables, True) }}
+--
+--select
+--    {% for table_id in tables %}
+--    {{ log("table_id: " ~ table_id, True) }}
+--    {{ null_values_fields(table_id) }} as {{ table_id }}_null_values_fields
+--    {{ "," if not loop.last }}
+--    {% endfor %}

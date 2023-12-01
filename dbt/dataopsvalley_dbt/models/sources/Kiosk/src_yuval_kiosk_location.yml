@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: src_yuval_kiosk_location
+    description: Kiosk location information
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'kiosk', 'yuval']
+
+    tables:
+      - name: MRR_Yuval_kiosk_location
+        description: Kiosk location information
+        columns:
+          - name: yuval_kiosk_locationid
+            description: Kiosk location id
+          - name: yuval_kiosk_location
+            description: Kiosk location description
+          - name: yuval_kiosk_location_typename
+            description: Kiosk location type

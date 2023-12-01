@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: z_DataOps_Status_Report
+    description: z DataOps Status Report
+    columns:
+      - name: Product
+        description: מוצר
+      - name: TableName
+        description:  שם טבלה
+      - name: tagName
+        description:  שם תגית
+      - name: LastUpdate
+        description: תאריך עדכון אחרון
+      - name: Status
+        description: סטטוס
+
+  - name: z_DataOps_Status_Table
+    description: z DataOps Status Table
+    columns:
+      - name: TableIndex
+        description: אינדקס טבלה
+      - name: ProjectId
+        description: מפתח פרוייקט
+      - name: DatasetId
+        description: מפתח דטאסט
+      - name: TableId
+        description: מפתח טבלה
+      - name: Type
+        description: סוג
+      - name: RowCount
+        description: ס"הכ שורות
+      - name: LastModifiedDate
+        description: תאריך שינוי אחרון

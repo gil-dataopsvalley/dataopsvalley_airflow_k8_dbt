@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: src_sso_by_metric
+    description: sso by metric
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'sso']
+
+    tables:
+      - name: MRR_SSO_ByMetric
+        description: SSO By Metric table
+        columns:
+          - name: Date
+            description: Date
+          - name: message
+            description: message
+          - name: CntDaily
+            description: CntDaily
+          - name: MetricName
+            description: MetricName

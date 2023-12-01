@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: src_Datagov
+    description: רשות האוכלוסין וההגירה - נתוני אוכלוסיה לפי יישוב וקבוצת גיל
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'datagov', 'evc']
+
+    tables:
+      - name: MRR_Datagov_Piba_Population
+        description: נתוני אוכלוסיה לפי יישוב וקבוצת גיל
+        columns: 
+          - name: settlement_symbol
+            description: קוד יישוב
+            tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+          - name: settlement_name
+            description: שם יישוב
+          - name: code_regional_council
+            description: קוד מועצה אזורית
+          - name: regional_council
+            description: שם מועצה אזורית
+          - name: total
+            description: סך תושבים

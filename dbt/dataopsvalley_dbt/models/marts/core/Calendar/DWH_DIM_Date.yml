@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: DWH_DIM_Date
+    description: '{{ doc("DWH_DIM_Date_detailes") }}'
+    tags: ['daily', 'calendar']
+    columns:
+      - name: DateId
+        description: PK (UUID) of Date
+        tests:
+          - unique
+          - not_null
+      - name: DateFull
+        description: Full Description of the PK
+        tests:
+          - unique
+          - not_null
+      - name: IsCurrentDay
+        description: Flag to if it is either current day or not
+      - name: IsYesterdayDate
+        description: Flag to reflect if it is either yesterday's date or not
+      - name: IsCurrentWeek
+        description: Flag to reflect if it is either current week or not
+      - name: IsCurrentMonth
+        description: Flag to reflect if it is either current month or not
+      - name: IsCurrentQuarter
+        description: Flag to reflect if it is either current quarter or not
+      - name: IsCurrentYear
+        description: Flag to reflect if it is either current year or not
+      - name: IsTodayMTD
+        description: Flag to reflect if it is in the MTD time period (from the beginning of the current month to the current day)
+      - name: IsTodayYTD
+        description: Flag to reflect if it is in the YTD time period (from the beginning of the current year to the current day)
+      - name: IsPreviousMonth
+        description: Flag to reflect a month ago time period, referenced to current month
+      - name: IsPrevious2Month
+        description: Flag to reflect 2 months ago time period, referenced to current month
+      - name: IsPreviousMTD
+        description: Flag to reflect the previous MTD time period (from the beginning of the last month to current day in the last month)
+      - name: IsPreviousYTD
+        description: Flag to reflect the previous YTD time period (from the beginning of the last year to current day in the last year)

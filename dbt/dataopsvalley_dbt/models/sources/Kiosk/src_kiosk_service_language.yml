@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+    - name: src_kiosk_service_language
+      description: kiosk service language
+      database: dgt-gcp-egov-test-govilbi-0
+      schema: GovilBiRepDS
+
+      tags: ['daily', 'kiosk']
+
+      tables:
+        - name: MRR_Kiosk_ServiceLanguage
+          description: kiosk service language table
+          columns:
+            - name: ServiceIndex
+              description: Service Index
+            - name: LanguageId
+              description: Language Id

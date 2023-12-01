@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: stg_ecom_customer_details
+    description: stg_ecom_customer_details
+    columns:
+      - name: officeId_Ecom
+      - name: CustomerCRMCode
+      - name: CustomerName
+      - name: Domain
+
+
+  - name: stg_ecom_payment
+    description: stg_ecom_payment
+    columns:
+      - name: CustomerCRMCode
+      - name: CustomerName
+      - name: Domain
+      - name: Organization
+      - name: PaymentsCount
+      - name: PaymentsSum
+      - name: DateLastChanged
+      - name: ServiceCode
+        tests:
+          - relationships:
+              to: source('src_ecom_services', 'MRR_Ecom_Services')
+              field: ServiceCode
+      - name: OfficeIdEcom
+      - name: OfficeNameEcom
+      - name: TransactionType
+      - name: StationId
+      - name: PayMethodCode
+      - name: OneclickPayMethod
+      - name: CcMutag
+      - name: CommerceName
+
+  - name: stg_ecom_services
+    description: stg_ecom_services. We perform deduplication, using ServiceCode and CommerceName as the key. We just take the first record, for each of those.
+    columns:
+      - name: ServiceCode
+        tests:
+          - unique
+          - not_null
+      - name: CommerceName
+      - name: ServiceDesc
+      - name: RankBy_ServiceCodeAndTypeService
+        description: The row number of record, after partitioning by ServiceCode,TypeService. Used for deduplication, we just take the first row.
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - ServiceCode
+            - CommerceName

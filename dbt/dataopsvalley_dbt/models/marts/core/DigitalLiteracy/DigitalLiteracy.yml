@@ -1,0 +1,152 @@
+version: 2
+
+models:
+  - name: DWH_DIM_DigitalLiteracy_Kayma
+    description:  טבלת אוריינות דיגיטלית קיימא
+    columns:
+      - name: user_hash
+        description:  user hash
+      - name: supplier_name
+        description: supplier name
+      - name: population
+        description: population
+      - name: course_subject
+        description: course subject
+      - name: course_type
+        description: course type
+      - name: place
+        description: place
+      - name: created_at
+        description: created at
+      - name: before_after
+        description: before after
+      - name: general_literacy_score_pctil
+        description: general literacy score pctil
+      - name: satisfaction_content
+        description: satisfaction content
+      - name: satisfaction_teaching
+        description: satisfaction teaching
+      - name: satisfaction_independent
+        description: satisfaction independent
+      - name: totalSatisfaction
+        description: total Satisfaction
+      - name: LastUpdate
+        description: Last  Update
+
+  - name: DWH_DIM_DigitalLiteracy_Programs
+    description: תוכניות אוריינות דיגיטלית
+    columns:
+      - name: ProgramID
+        description:  מפתח התוכנית
+      - name: ProgramName
+        description:  שם התוכנית
+
+  - name: DWH_DIM_DigitalLiteracy_Rashuiot
+    description: ראשויות של אוריינות דיגיטלית
+    columns:
+       - name: key
+         description:  מפתח
+       - name: he
+         description: שם הרשות בעברית
+       - name: en
+         description: שם הרשות באנגלית
+       - name: ar
+         description:  שם הרשות בערבית
+       - name: region
+         description: אזור הרשות
+
+  - name: DWH_DIM_DigitalLiteracy_Supplier
+    description: ספקים של אוריינות דיגיטלית
+    columns:
+      - name :  SupplierID
+        description :  מפתח ספק
+      - name :  SupplierName
+        description :  שם ספק
+
+  - name: DWH_FACT_DigitalLiteracy_Satisfaction
+    description: שביעות רצון אוריינות דיגיטלית
+    columns:
+      - name : user_hash
+        description : user hash
+      - name : created_at
+        description :  created at
+      - name : source_name
+        description : source name
+      - name : before_after
+        description : before after
+      - name : gender
+        description : gender
+      - name : age
+        description : age
+      - name : consumption
+        description : consumption
+      - name : finance
+        description : finance
+      - name : health
+        description : health
+      - name : civ
+        description :  civ
+      - name : communication
+        description :  communication
+      - name : fun
+        description : fun
+      - name : population
+        description : population
+      - name : supplier_name
+        description :  supplier name
+      - name : course_type
+        description : course type
+      - name : course_subject
+        description : course subject
+      - name : starting_date
+        description : starting date
+      - name : place
+        description : place
+      - name : device
+        description : device
+      - name : teaching_method
+        description : teaching method
+      - name : teacher_name
+        description : teacher name
+      - name : Attribute
+        description : Attribute
+      - name : Value
+        description :  Value
+
+  - name: DWH_FACT_DigitalLiteracy_Subject
+    description:   נושא אוריינות דיגיטלית
+    columns:
+      - name : user_hash
+        description: user hash
+      - name : created_at
+        description: created at
+      - name : source_name
+        description: source name
+      - name : before_after
+        description: before after
+      - name : gender
+        description: gender
+      - name : age
+        description: age
+      - name : population
+        description: population
+      - name : supplier_name
+        description: supplier name
+      - name : course_type
+        description: course type
+      - name : course_subject
+        description: course subject
+      - name : starting_date
+        description: starting date
+      - name : place
+        description: place
+      - name : device
+        description: device
+      - name : teaching_method
+        description: teaching method
+      - name : teacher_name
+        description: teacher name
+      - name : Attribute
+        description: Attribute
+      - name : Value
+        description: Value

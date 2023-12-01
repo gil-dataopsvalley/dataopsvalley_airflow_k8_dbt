@@ -1,0 +1,125 @@
+version: 2
+
+models:
+  - name: DWH_DIM_Ncc_Dim_Project
+    description: DWH DIM Ncc Dim Project
+    columns:
+        - name: user_hash
+          description: user hash
+        - name: created_at
+          description: created at
+        - name: source_name
+          description: source name
+        - name: before_after
+          description: before after
+        - name: gender
+          description: gender
+        - name: age
+          description: age
+        - name: population
+          description: population
+        - name: supplier_name
+          description: supplier name
+        - name: course_type
+          description: course type
+        - name: course_subject
+          description: course subject
+        - name: starting_date
+          description: starting date
+        - name: place
+          description: place
+        - name: device
+          description: device
+        - name: teaching_method
+          description: teaching method
+        - name: teacher_name
+          description: teacher name
+        - name: Attribute
+          description: Attribute
+        - name: Value
+          description: Value
+
+  - name: DWH_DIM_Ncc_ProjectAssistance
+    description: DWH DIM Ncc ProjectAssistance
+    columns:
+       - name: filename
+         description: filename
+       - name: tools_or_assistance
+         description: tools or assistance
+       - name: used_or_not_used
+         description: used or not used
+
+  - name: DWH_FACT_Ncc_Milestones
+    description: DWH FACT Ncc Milestones
+    columns:
+        - name: milestone_number
+          description: milestone number
+        - name: milestone_description
+          description: milestone description
+        - name: milestone_budget
+          description: milestone budget
+        - name: milestone_execution_status
+          description: milestone execution status
+        - name: executed_milestone
+          description: executed milestone
+        - name: onboarding_milestone
+          description: onboarding milestone
+        - name: before_execution_milestone
+          description: before execution milestone
+        - name: execution_date
+          description: execution date
+        - name: filename
+          description: filename
+
+  - name: DWH_FACT_Ncc_ProjectControlSubChallenge
+    description: DWH FACT Ncc ProjectControlSubChallenge
+    columns:
+        - name: layer
+          description: layer
+        - name: problem_description
+          description: problem description
+        - name: office_name
+          description: office name
+
+  - name: DWH_FACT_Ncc_ProjectDetail
+    description: DWH FACT Ncc ProjectDetail
+    columns:
+        - name: office_name
+          description: office name
+        - name: project_name
+          description: project name
+        - name: a_major_challenge
+          description: a major challenge
+        - name: sub_challenge
+          description: sub challenge
+        - name: sub_sub_challenge
+          description: sub sub challenge
+        - name: what_is_taken_into_account
+          description: what is taken into account
+        - name: present__v__not_present__blank_
+          description:  present__v__not_present__blank_
+
+  - name: DWH_FACT_Ncc_ProjectStepCloud
+    description: DWH FACT Ncc Project Step Cloud
+    columns:
+       - name: cloud_step_description
+         description: cloud step description
+       - name: cloud_step_id
+         description: cloud step id
+       - name: executed_step
+         description: executed step
+       - name: onboarding_step
+         description: onboarding step
+       - name: before_execution_step
+         description: before execution step
+       - name: cloud_step_status
+         description: cloud step status
+       - name: filename
+         description: filename
+
+    				
+
+
+
+
+

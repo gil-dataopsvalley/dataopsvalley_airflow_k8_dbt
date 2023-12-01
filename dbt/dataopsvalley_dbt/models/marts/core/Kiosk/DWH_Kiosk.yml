@@ -1,0 +1,168 @@
+version: 2
+
+models:
+  - name: DWH_DIM_Kiosk_Station
+    description: DWH DIM Kiosk Station
+    columns:
+      - name: StationID
+        description: Station ID
+      - name: Yuval_Station_ID
+        description: Yuval Station ID
+      - name: StationStatusCode
+        description: Station Status Code
+      - name: StationStatusCodeName
+        description: Station Status CodeName
+      - name: StationStateCode
+        description: Station State Code
+      - name: StationStateCodeName
+        description: Station State CodeName
+      - name: StationComment
+        description: Station Comment
+      - name: Address
+        description: Address
+      - name: ComputerName
+        description: Computer Name
+      - name: CordX
+        description: CordX
+      - name: CordY
+        description: CordY
+      - name: CreditCardReaderType
+        description: CreditCard Reader Type
+      - name: StationDefaultLanguageName
+        description: Station Default Language Name
+      - name: DeploymentStatusName
+        description: Deployment StatusName
+      - name: DisplayNameTahbura
+        description: Display Name Tahbura
+      - name: ExternalIDNameGovIl
+        description: ExternalID Name GovIl
+      - name: FingerReader
+        description: FingerReader
+      - name: IdCardReaderName
+        description: IdCard Reader Name
+      - name: IronNumber
+        description: Iron Number
+      - name: LocationName
+        description: Location Name
+      - name: ModelName
+        description: Model Name
+      - name: Latitude
+        description: Latitude
+      - name: LineCodeName
+        description: Line Code Name
+      - name: LoadingResponsibilityName
+        description: Loading Responsibility Name
+      - name: Longitude
+        description: Longitude
+      - name: ModemIp
+        description: Modem Ip
+      - name: Pop_TypeName
+        description: Pop TypeName
+      - name: PrinterTypeName
+        description: Printer Type Name
+      - name: ProximitySensor
+        description: Proximity Sensor
+      - name: Scanner
+        description: Scanner
+      - name: StationIP
+        description: Station IP
+      - name: Town
+        description: Town
+      - name: UnitName
+        description: UnitName
+      - name: WindowsTypeName
+        description: Windows Type Name
+      - name: IsForBI
+        description: Is For BI
+      - name: CustomerCRMCode
+        description: Customer CRM Code
+      - name: CustomerName
+        description: Customer Name
+      - name: KioskLocationName
+        description: Kiosk Location Name
+      - name: LocationNameCategory
+        description: Location Name Category
+      - name: StationNam
+        description: Station Nam
+
+  - name: DWH_FACT_Kiosk_Log_Daily
+    description: DWH FACT Kiosk Log Daily
+    columns:
+      - name: Date
+        description: Date
+      - name: NumberTransaction
+        description: Number Transaction
+      - name: Severity
+        description: Severity
+      - name: Message
+        description: Message
+      - name: MachineName
+        description: Machine Name
+      - name: Module
+        description: Module
+      - name: StationId
+        description: Station Id
+      - name: ServiceId
+        description: Service Id
+      - name: ServiceDisplayNameHebrew
+        description: Service Display Name Hebrew
+      - name: StationsTypeDisplayName
+        description: Stations Type DisplayName
+      - name: ServiceLanguage
+        description: Service Language
+      - name: AD_Status
+        description: AD Status
+
+  - name: DWH_FACT_Kiosk_Log_Daily_H
+    description: DWH FACT Kiosk Log Daily Hour
+    columns:
+      - name: Date
+        description: Date
+      - name: Date_H
+        description: Date_H
+      - name: NumberTransaction
+        description: Number Transaction
+      - name: Severity
+        description: Severity
+      - name: Message
+        description: Message
+      - name: MachineName
+        description: Machine Name
+      - name: Module
+        description: Module
+      - name: StationId
+        description: Station Id
+      - name: ServiceId
+        description: Service Id
+      - name: ServiceDisplayNameHebrew
+        description: Service Display Name Hebrew
+      - name: StationsTypeDisplayName
+        description: Stations Type DisplayName
+      - name: ServiceLanguage
+        description: Service Language
+      - name: AD_Status
+        description: AD Status
+
+  - name: v_report_kiosk_log_daily
+    description: Report Kiosk Log Daily
+    columns:
+      - name: Date
+        description: Date
+      - name: ServiceDisplayNameHebrew
+        description: Service DisplayName Hebrew
+      - name: StationName
+        description: Station Name
+      - name: success_message,
+        description: success message
+      - name: ServiceLanguage
+        description: Service Language
+      - name: StationDefaultLanguageName
+        description: Station Default LanguageName
+      - name: KioskLocationName
+        description: Kiosk Location Name
+      - name: Pop_TypeName
+        description: Pop Type Name
+      - name: Town
+        description: Town
+      - name: NumberTransaction
+        description: Number Transaction

@@ -1,0 +1,150 @@
+version: 2
+
+models:
+  - name: stg_kiosk_log_daily_h
+    description: STG Kiosk Log Daily Hour
+    columns:
+      - name: Date
+      - name: Date_H
+      - name: Severity
+      - name: Message
+      - name: MachineName
+      - name: Module
+      - name: StationId
+      - name: ServiceId
+      - name: NumberTransaction
+      - name: ServiceDisplayNameHebrew
+      - name: StationsTypeDisplayName
+      - name: AD_Statu
+      - name: InsertDate
+        
+  
+  - name: stg_yuval_kiosk_station
+    description: STG Yuval Kiosk Station
+    columns:
+    - name: StationStatusCode
+    - name: StationStateCode
+    - name: StationStatusCodeName
+    - name: StationStateCodeName
+    - name: StationComment
+    - name: Address
+    - name: ComputerName
+    - name: CordX
+    - name: CordY
+    - name: CreditCardReaderType
+    - name: StationDefaultLanguageName
+    - name: DeploymentStatusName
+    - name: DisplayNameTahbura
+    - name: ExternalIDNameGovIl
+    - name: FingerReader
+    - name: StationID
+    - name: IdCardReaderName
+    - name: IronNumber
+    - name: LocationName
+    - name: ModelName
+    - name: Latitude
+    - name: LineCodeName
+    - name: LoadingResponsibilityName
+    - name: Longitude
+    - name: ModemIp
+    - name: Pop_TypeName
+    - name: PrinterTypeName
+    - name: ProximitySensor
+    - name: Scanner
+    - name: StationIP
+    - name: Town
+    - name: UnitName
+    - name: WindowsTypeName
+    - name: IsForBI
+    - name: CustomerCRMCode
+    - name: CustomerName
+    - name: KioskLocationName
+    - name: LocationNameCategory
+    - name: StationName
+    - name: Yuval_Station_I
+
+  - name: stg_kiosk_service_language
+    description: STG Kiosk Service Language
+    columns:
+      - name: LanguageId
+      - name: ServiceLanguage
+      - name: ServiceIndex
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

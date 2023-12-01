@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: DWH_FACT_Sso_By_Metric
+    description: DWH FACT Sso By Metric
+    columns:
+      - name: Date
+        description: Date
+      - name: Message
+        description: Message
+      - name: MetricName
+        description: Metric Name
+      - name: CntDaily
+        description: CntDaily
+
+  - name: DWH_FACT_Sso_Count_Session_Login
+    description: DWH FACT Sso Count Session Login
+    columns:
+      - name: Date
+        description: Date
+      - name: CountSucces
+        description: Count Succes
+      - name: CountFail
+        description: CountFail
+      - name: SumCountSessionId
+        description: Sum Count SessionId
+      - name: CntDaily
+        description: CntDaily
+
+  - name: DWH_FACT_Sso_Web_Access
+    description: DWH FACT Sso WebAccess
+    columns:
+      - name: Date
+        description: Date
+      - name: AccessedUrl
+        description: Accessed Url
+      - name: Message
+        description: Message
+      - name: ApplicationName
+        description: Application Name
+      - name: CustomerName
+        description: Customer Name
+      - name: CustomerCRMCode
+        description: Customer CRM Code
+      - name: StatusCode
+        description: Status Code
+      - name: DnsSite
+        description: Dns Site
+      - name: CntDaily
+        description: CntDaily

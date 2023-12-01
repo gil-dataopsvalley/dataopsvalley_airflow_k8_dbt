@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: DWH_DIM_YuvalContact
+    description: '{{ doc("DWH_DIM_YuvalContact_detailes") }}'
+    columns:
+      - name: CustomerCRMCode
+        description: CustomerCRMCode (UUID)
+      - name: FirstName
+        description: First name of contact
+      - name: LastName
+        description: Last name of contact
+      - name: Mobile
+        description: Mobile phone number of contact
+      - name: ContactEmail
+        description: Email address of contact

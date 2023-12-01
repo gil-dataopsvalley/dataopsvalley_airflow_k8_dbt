@@ -1,0 +1,162 @@
+version: 2
+
+sources:
+  - name: src_emun
+    description: '{{ doc("SRC_Emun") }}'
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+    #docs:
+     #node_color: "#F4A460"
+
+
+    tags: ['daily', 'emun']
+
+    tables:
+      - name: MRR_Emun_Casualties
+        description: '{{ doc("MRR_Emun_Casualties") }}'
+        columns:
+          - name: date
+            description: תאריך
+          - name: number_of_casualties
+            description: כמות נפגעים
+
+
+      - name: MRR_Emun_CasualtiesByLocalAuthority
+        description: '{{ doc("MRR_Emun_CasualtiesByLocalAuthority") }}'
+        columns:
+          - name: LocalAuthority_Name
+            description: שם רשות מקומית
+          - name: LocalAuthority_Code
+            description: קוד רשות מקומית
+          - name: Total_Injured
+            description: סה"כ נפגעים
+          - name: Total_Died
+            description: סה"כ מתים
+          - name: Hospitalized_Now
+            description: מאושפזים כעת
+
+      - name: MRR_Emun_CurrentInformationMinistryEducation
+        description: '{{ doc("MRR_Emun_CurrentInformationMinistryEducation") }}'
+        columns:
+          - name: school_type
+            description: סוג בית ספר
+          - name: status
+            description: סטטוס
+          - name: count
+            description: כמות
+
+      - name: MRR_Emun_EvacueesByShalterType
+        description: '{{ doc("MRR_Emun_EvacueesByShalterType") }}'
+        columns:
+          - name: Date
+            description: תאריך
+          - name: EvacType
+            description: סוג מקלט
+          - name: NumberOfEvacuees
+            description: כמות מפונים
+
+      - name: MRR_Emun_EvacueesSettlementAuthority
+        description: '{{ doc("MRR_Emun_EvacueesSettlementAuthority") }}'
+        columns:
+          - name: EvacuatedSettlement
+            description: שם ישוב מפונה
+          - name: EvacuatedSettlementCode
+            description: קוד ישוב מפונה
+          - name: ReceivingAuthority
+            description: שם רשות מקבלת
+          - name: CuncillCode
+            description: קוד רשות שהתפנות אליה
+          - name: SettlementCode
+            description: קוד ישוב שהתפנו אליו
+          - name: NumberOHotels
+            description: מספר המלונות באותו ישוב
+          - name: EvacueesFromEvacuatioProgram
+            description: מספר מפונים בתכנית המפונים
+          - name: EvacuateIndependently
+            description: מספר מתפנים עצמאית
+          - name: TotalEvacuate
+            description: סה"כ מפונים ומתפנים
+
+      - name: MRR_Emun_SingleDataTable
+        description: '{{ doc("MRR_Emun_SingleDataTable") }}'
+        columns:
+          - name: Field
+            description: שם הנתון
+          - name: Value
+            description: כמות
+          - name: Value2
+            description: ערך
+          - name: Comments
+            description: הערות
+          - name: DashboardName
+            description: שם הנתון בדוח
+          - name: Module
+            description: מודול
+          - name: Sort
+            description: מיון
+
+      - name: MRR_Emun_StatusHospitals
+        description: '{{ doc("MRR_Emun_StatusHospitals") }}'
+        columns:
+          - name: district
+            description: שם מחוז
+          - name: hospital
+            description: שם בית חולים
+          - name: were_admitted_in_the_last_day
+            description: נקלטו ביממה האחרונה
+          - name: hospitalized_for_more_than_a_day
+            description: אשפוז של יותר מיום אחד
+          - name: total
+            description: סה"כ מאושפזים כעת
+          - name: total_casualties
+            description: סה"כ נפגעים
+
+      - name: MRR_Emun_Unemployment
+        description: '{{ doc("MRR_Emun_Unemployment") }}'
+        columns:
+          - name: date_of_submission
+            description: תאריך הגשה
+          - name: involuntary_unpaid_leave
+            description: חופשה לא רצונית ללא תשלום
+          - name: other_reasons
+            description: סיבות אחרות
+          - name: total
+            description: סה"כ
+
+      - name: MRR_Emun_UnemploymentJobClaimsByBranches
+        description: '{{ doc("MRR_Emun_UnemploymentJobClaimsByBranches") }}'
+        columns:
+          - name: employment_branch
+            description: ענף תעסוקה
+          - name: total_claims
+            description: סה"כ תביעות
+          - name: the_percentage_of_claims_sums_up
+            description: אחוז מתביעות
+
+      - name: MRR_Emun_Victims
+        description: '{{ doc("MRR_Emun_Victims") }}'
+        columns:
+          - name: rank
+            description: דרגה
+          - name: sex
+            description: מין
+          - name: age
+            description: גיל
+          - name: city
+            description: עיר
+          - name: cause
+            description: גורם המוות
+          - name: date
+            description: תאריך המוות
+          - name: type
+            description: סוג - שוטר\חייל
+          - name: general_type
+            description: סוג כללי
+          - name: event_date
+            description: תאריך האירוע
+          - name: death_date
+            description: תאריך המוות
+          - name: zone
+            description: אזור
+          - name: week_num
+            description: שבוע מספר

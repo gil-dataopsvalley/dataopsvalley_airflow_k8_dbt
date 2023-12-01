@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: DWH_FACT_Ecom_Payment
+    description: DWH FACT Ecom Payment
+    columns:
+      - name: CustomerCRMCode
+        description: Customer CRM Code
+      - name: CustomerName
+        description: Customer Name
+      - name: Domain
+        description: Domain
+      - name: Organization
+        description: Organization
+      - name: PaymentsCount
+        description: PaymentsCount
+      - name: PaymentsSum
+        description: Payments Sum
+      - name: DateLastChanged
+        description: Payments Sum
+      - name: ServiceCode
+        description: Service Code
+      - name: OfficeIdEcom
+        description: Office Id Ecom
+      - name: OfficeNameEcom
+        description: Office Name Ecom
+      - name: TransactionType
+        description: Transaction Type
+      - name: StationId
+        description: Station Id
+      - name: PayMethodCode
+        description: Pay Method Code
+      - name: OneclickPayMethod
+        description: One click Pay Method
+      - name: CcMutag
+        description: Cc Mutag
+      - name: CommerceNam
+        description: Commerce Nam
+      - name: ServiceDesc
+        description: Service Desc

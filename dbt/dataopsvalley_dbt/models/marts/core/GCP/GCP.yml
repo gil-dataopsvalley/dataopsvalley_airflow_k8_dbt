@@ -1,0 +1,105 @@
+version: 2
+
+models:
+  - name: DWH_DIM_GCP_User
+    description: DWH GCP users metadata
+    columns:
+      - name: project_id
+        description: project ID
+      - name: user_type
+        description: user type
+      - name: user
+        description: user desc
+      - name: role
+        description: user role desc
+      - name: uploaded_date
+        description: MRR update date
+      - name: FirstName
+        description: First name of contact
+      - name: LastName
+        description: Last name of contact
+      - name: Mobile
+        description: Mobile phone number of contact
+      - name: ContactEmail
+        description: Email address of contact
+      - name: Domain
+        description: Domain desc of contact
+      - name: CustomerName
+        description: Customer Name
+
+  - name: DWH_DIM_GCP_serviceAccount
+    description: DWH GCP serviceAccounts metadata
+    columns:
+      - name: project_id
+        description: project ID
+      - name: user_type
+        description: user type
+      - name: serviceAccount
+        description: serviceAccount desc
+      - name: role
+        description: serviceAccount role desc
+      - name: uploaded_date
+        description: MRR update date
+
+  - name: DWH_DIM_GCP_Group
+    description: DWH GCP groups metadata
+    columns:
+      - name: project_id
+        description: project ID
+      - name: user_type
+        description: user type
+      - name: groupName
+        description: group desc
+      - name: role
+        description: group role desc
+      - name: uploaded_date
+        description: MRR update date
+
+  - name: DWH_DIM_GCP_Project
+    description: DWH GCP Progects metadata
+    columns:
+      - name: project_id
+        description: project ID
+      - name: project_number
+        description: project number
+      - name: project_status
+        description: project status
+      - name: department
+        description: department
+      - name: owners_group_email
+        description: owners group email
+      - name: environment
+        description: environment
+      - name: product_name
+        description: product name
+      - name: ministry_name
+        description: ministry name
+      - name: merkava_purchase_order_number
+        description: merkava purchase order number
+      - name: merkava_ministry_id
+        description: merkava ministry id
+      - name: account_name
+        description: account name
+      - name: Contact_Name
+        description: Contact Name
+      - name: Contact_Mobile
+        description: Contact Mobile
+      - name: Customer Name
+        description: Customer Name
+      - name: budget_display_name
+        description: budget display name
+      - name: budget_calendar_period
+        description: budget calendar period
+      - name: current_invoice_month
+        description: current invoice month
+      - name: current_month_budget
+        description: current month budget
+      - name: billing_balance_mtd
+        description: billing balance mtd
+      - name: billing_usage_mtd
+        description: billing usage mtd
+      - name: LastUpdate
+        description: Last Update
+
+
+

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: DWH_FACT_La_Moked
+    description: DWH FACT La Moked
+    columns:
+      - name: Date
+        description: Date
+      - name: Local_authority_name
+        description: Local authority name
+      - name: Domain
+        description: Domain
+      - name: Sub_domain
+        description: Sub domain
+      - name: Count_daily
+        description: Count daily
+
+
+
+

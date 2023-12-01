@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: DWH_FACT_Emun_Casualties
+    description: DWH FACT Emun Casualties
+    columns:
+      - name: date
+        description: תאריך
+      - name: number_of_casualties
+        description: כמות נפגעים
+
+
+
+  - name: DWH_FACT_Emun_Status_Hospitals
+    description: DWH FACT Emun Status Hospitals
+    columns:
+      - name: district
+        description: שם מחוז
+      - name: hospital
+        description: שם בית חולים
+      - name: were_admitted_in_the_last_day
+        description: נקלטו ביממה האחרונה
+      - name: hospitalized_for_more_than_a_day
+        description: אשפוז של יותר מיום אחד
+      - name: total	
+        description: סה"כ מאושפזים כעת
+      - name: total_casualties
+        description: סה"כ נפגעים
+
+  - name: DWH_FACT_Emun_Unemployment
+    description: DWH FACT Emun Unemployment
+    columns:
+      - name: date_of_submission
+        description: תאריך הגשה
+      - name: involuntary_unpaid_leave
+        description: חופשה לא רצונית ללא תשלום
+      - name: other_reasons
+        description: סיבות אחרות
+      - name: total
+        description: סה"כ
+
+
+  - name: DWH_FACT_Emun_UnemploymentJobClaimsByBranches
+    description: DWH FACT Emun UnemploymentJobClaimsByBranches
+    columns:
+        - name: employment_branch
+          description: ענף תעסוקה
+        - name: total_claims
+          description: סה"כ תביעות
+        - name: percentage_of_claims
+          description: אחוז מתביעות
+
+
+  - name: DWH_FACT_Emun_Victims
+    description: DWH FACT Emun Victims
+    columns:
+        - name: rank
+          description: דרגה
+        - name: sex
+          description: מין
+        - name: age
+          description: גיל
+        - name: city
+          description: עיר
+        - name: cause
+          description: גורם המוות
+        - name: date
+          description: תארך המוות
+        - name: type
+          description: סוג תפקיד
+        - name: general_type
+          description:  סוג תפקיד כללי
+        - name: date_event_display
+          description: תאריך האירוע
+        - name: zone
+          description: איזור
+        - name: week_num
+          description:  מספר שבוע
+        - name: zone_type_union
+          description: איחוד שדות - איזור וסוג תפקיד
+
+

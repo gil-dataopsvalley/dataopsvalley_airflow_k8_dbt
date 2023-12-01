@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: src_gcp_budget
+    description: GCP Projects Budgets
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'gcpops']
+
+    tables:
+      - name: MRR_GCP_Budgets
+        description: GCP Projects Budgets
+        columns:
+          - name: budget_filter.project
+            description: project_id
+          - name: display_name
+            description: Budget Display Name
+          - name: budget_filter.calendar_period
+            description: Budget Calendar Period
+          - name: budget_filter.service
+            description: Budget Service
+          - name: budget_filter.resource_ancestor
+            description: Budget Resource Ancestor
+          - name: budget_amount.units
+            description: Budget Units

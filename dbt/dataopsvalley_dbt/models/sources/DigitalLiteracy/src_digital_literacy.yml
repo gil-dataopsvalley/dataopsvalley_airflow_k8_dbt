@@ -1,0 +1,153 @@
+version: 2
+
+sources:
+  - name: src_digital_literacy
+    description: אוריינות דיגיטלית קיימא
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'diglit']
+
+    tables:
+      - name: MRR_DigitalLiteracy_Kayma
+        description: טבלת אוריינות דיגיטלית קיימא
+        columns:
+          - name: source_name
+            description: "שם המקור"
+          - name: url_param_sapak
+            description: "**  add desc  **"
+          - name: url_param_src
+            description: "**  add desc  **"
+          - name: project
+            description: "שם פרוייקט"
+          - name: before_after
+            description: "לפני,אחרי"
+          - name: language
+            description: "שפה"
+          - name: religion
+            description: "דת"
+          - name: religion_level
+            description: "רמה דתית"
+          - name: vatikim
+            description: "**  add desc  **"
+          - name: gender
+            description: "מין"
+          - name: age
+            description: "גיל"
+          - name: consumption
+            description: "צריכה"
+          - name: finance
+            description: "מימון"
+          - name: health
+            description: "בריאות"
+          - name: civ
+            description: "**  add desc  **"
+          - name: communication
+            description: "תקשורת"
+          - name: fun
+            description: "פנאי"
+          - name: employment
+            description: "תעסוקה"
+          - name: satisfaction_teaching
+            description: "**  add desc  **"
+          - name: satisfaction_content
+            description: "**  add desc  **"
+          - name: satisfaction_independent
+            description: "**  add desc  **"
+          - name: motiv_time
+            description: "**  add desc  **"
+          - name: motiv_social
+            description: "**  add desc  **"
+          - name: motiv_fun
+            description: "**  add desc  **"
+          - name: motiv_economic
+            description: "**  add desc  **"
+          - name: motiv_info
+            description: "**  add desc  **"
+          - name: motiv_work
+            description: "**  add desc  **"
+          - name: motiv_religion
+            description: "**  add desc  **"
+          - name: motiv_no_choice
+            description: "**  add desc  **"
+          - name: motiv_barrier_privacy
+            description: "**  add desc  **"
+          - name: motiv_barrier_language
+            description: "**  add desc  **"
+          - name: motiv_barrier_wrong_info
+            description: "**  add desc  **"
+          - name: motiv_barrier_lifestyle
+            description: "**  add desc  **"
+          - name: motiv_barrier_religion
+            description: "**  add desc  **"
+          - name: motiv_barrier_investment
+            description: "**  add desc  **"
+          - name: motiv_barrier_waste
+            description: "**  add desc  **"
+          - name: motiv_barrier_other_person
+            description: "**  add desc  **"
+          - name: domains_scales
+            description: "**  add desc  **"
+          - name: general_literacy_score
+            description: "**  add desc  **"
+          - name: population
+            description: "אכלוס"
+          - name: supplier_name
+            description: "שם הספק"
+          - name: course_type
+            description: "סוג הקורס"
+          - name: course_subject
+            description: "נושא הקורס"
+          - name: starting_date
+            description: "תאריך התחלה"
+          - name: place
+            description: "מיקום"
+          - name: device
+            description: "מכשיר"
+          - name: teaching_method
+            description: "שיטת למידה"
+          - name: teacher_name
+            description: "שם המורה"
+          - name: general_literacy_score_pctil
+            description: "**  add desc  **"
+          - name: class_id
+            description: "**  add desc  **"
+
+      - name: MRR_DigitalLiteracy_Programs
+        description: "טבלה של תוכניות אוריינות דיגיטלית"
+        columns:
+          - name: ProgramName
+            description: "שם התוכנית"
+          - name: ProgramID
+            description: "שדה מפתח התוכנית"
+            tests:
+              - unique
+              - not_null
+
+      - name: MRR_DigitalLiteracy_Rashuiot
+        description: "טבלת ראשויות של אוריינות דיגיטלית"
+        columns:
+          - name: key
+            description: "שדה מפתח"
+            tests:
+              - unique
+              - not_null
+          - name: he
+            description: "שם הרשות בעברית"
+          - name: en
+            description: "שם הרשות באנגלית"
+          - name: ar
+            description: "שם הרשות בערבית"
+          - name: region
+            description: "איזור הרשות"
+
+      - name: MRR_DigitalLiteracy_Suppliers
+        description: "טבלת ספקים של אוריינות דיגיטלית"
+        columns:
+          - name: SupplierName
+            description: "שם הספק"
+          - name: SupplierID
+            description: "מפתח הספק"
+            tests:
+              - unique
+              - not_null

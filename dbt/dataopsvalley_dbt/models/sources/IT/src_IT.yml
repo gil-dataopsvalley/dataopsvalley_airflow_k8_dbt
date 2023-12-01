@@ -1,0 +1,47 @@
+version: 2
+
+sources:
+  - name: src_IT
+    description: Server list IT
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'it']
+
+    tables:
+      - name: MRR_Servernew
+        description: mapping customers
+        columns:
+          - name: Cluster
+            description: Name customer from Server Files
+          - name: Office
+            description: Name customer from Yuval Customers
+          - name: VMName
+            description: Name Server
+          - name: VMHostName
+            description: Name Host Name
+          - name: RAM
+            description: Amount of RAM
+          - name: CPU
+            description: Amount of CPU
+          - name: VMName
+            description: Name Server
+          - name: PowerStatus
+            description: Status on\off
+          - name: OS
+            description: operating system
+          - name: HD_Actual
+            description: HD_Actual
+
+      - name: MRR_MappingITServerCustomerToYuval
+        description: mapping customers
+        columns:
+          - name: IT_Server
+            description: Name customer from Server Files
+            tests:
+              - unique
+              - not_null
+          - name: Yuval_Customer
+            description: Name customer from Yuval Customers
+            tests:
+              - not_null

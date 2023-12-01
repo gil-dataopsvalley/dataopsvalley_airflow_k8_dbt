@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: src_gcp_users
+    description: GCP projects' MetaData
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'gcpops']
+
+    tables:
+      - name: MRR_ProjectGCP_Roles_and_Users
+        description: GCP projects' metadata
+        columns:
+          - name: project_id
+            description: project ID
+          - name: user
+            description: user desc
+          - name: role
+            description: user role desc
+          - name: uploaded_date
+            description: MRR update date

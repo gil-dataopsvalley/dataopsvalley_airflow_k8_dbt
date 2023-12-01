@@ -1,0 +1,56 @@
+version: 2
+
+sources:
+  - name: src_dynatrace
+    description: data dynatrace MetaData
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'mygov', 'mot', 'hw', 'reports', 'dynatrace']
+
+    tables:
+      - name: MRR_Dynatrace_General
+        description: data from dynatrace
+        columns:
+          - name: ComponentName
+            description: Domain name
+          - name: FactName
+            description: Fact name
+          - name: MetricName
+            description: Metric name
+          - name: Date
+            description: Metric date
+          - name: Value
+            description: Metric value
+
+      - name: MRR_MetaDataDynatrace
+        description: MetaData from dynatrace
+        columns:
+          - name: Domain
+            description: Domain name
+          - name: customerDesc
+            description: customer desc
+          - name: MetricDisplayName
+            description: Metric display name
+          - name: FactDescriptionHeb
+            description: FactDescriptionHeb
+          - name: componentType
+            description: Component type
+          - name: ComponentName
+            description: Domain name
+          - name: CustomerReportDescriptionHeb
+            description: Customer report description heb
+          - name: componentNameHeb
+            description: component name heb
+          - name: componentDescriptionHeb
+            description: Component description hebrew
+          - name: componentName
+            description: component Name
+          - name: componentDescription
+            description: Component description
+          - name: Status
+            description: Status
+          - name: Owner
+            description: Owner
+          - name: OwnerEmail
+            description: Owner email

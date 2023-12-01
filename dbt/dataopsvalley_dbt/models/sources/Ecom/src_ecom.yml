@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: src_ecom
+    description: Finance Transactions
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'ecom']
+
+    tables:
+      - name: MRR_Ecom_v_ecom
+        description: Raw finance transactions data
+        columns:
+          - name: organization
+            description: Organization
+          - name: PaymentsCount
+            description: Payments Count
+          - name: PaymentsSum
+            description: Payments Sum
+          - name: DateLastChanged
+            description: Date Last Changed
+          - name: ServiceCode
+            description: Service Code
+          - name: officeId
+            description: Office Id
+          - name: OfficeName
+            description: Office Name
+          - name: transaction_type
+            description: Transaction Type
+          - name: station_id
+            description: Station Id
+          - name: PayMethodCode
+            description: Pay Method Code
+          - name: oneclick_pay_method
+            description: Oneclick Pay Method
+          - name: cc_mutag
+            description: cc Mutag
+          - name: CommerceName
+            description: Commerce Name

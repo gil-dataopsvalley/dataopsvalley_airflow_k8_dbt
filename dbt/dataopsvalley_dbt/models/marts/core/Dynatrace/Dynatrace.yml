@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: DWH_DIM_Dynatrace
+    description: DWH dynatrace data
+    columns:
+      - name: Domain
+        description: Domain name
+      - name: customerDesc
+        description: customer desc
+      - name: componentType
+        description: Component type
+      - name: CustomerReportDescriptionHeb
+        description: Customer report description heb
+      - name: MetricName
+        description: Metric name
+      - name: MetricDisplayName
+        description: Metric display name
+      - name: FactDescriptionHeb
+        description: Fact Description Heb
+      - name: FactName
+        description: Fact name
+      - name: ComponentName
+        description: Domain name
+      - name: Date
+        description: Metric date
+      - name: Value
+        description: Metric value
+
+  - name: DWH_DIM_Dynatrace_ByMetrics
+    description: DWH dynatrace data
+    columns:
+      - name: Domain
+        description: Domain name
+      - name: customerDesc
+        description: customer desc
+      - name: componentType
+        description: Component type
+      - name: CustomerReportDescriptionHeb
+        description: Customer report description heb
+      - name: FactName
+        description: Fact name
+      - name: FactDescriptionHeb
+        description: Fact Description Heb
+      - name: Date
+        description: Metric date
+      - name: numCompleteDownload
+        description: Metric isCompleteDownload
+      - name: avgResponseTimeSeconds
+        description: Metric isResponseTime
+      - name: numAppear
+        description: Metric isAppear
+      - name: numClick
+        description: Metric isClick
+      - name: numCompleteProcess
+        description: Metric isCompleteProcess
+      - name: pctError
+        description: Metric isError

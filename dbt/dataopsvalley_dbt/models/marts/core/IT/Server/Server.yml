@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: DWH_FACT_ITServer
+    description: DWH FACT ITServer
+    columns:
+        - name: Cluster
+          description: Cluster
+        - name: CPU
+          description: CPU
+        - name: VMName
+          description: VM Name
+        - name: VM Host Name
+          description: VM Host Name
+        - name: RAM
+          description: RAM
+        - name: CPU
+          description: CPU
+        - name: OS
+          description: OS
+        - name: HD_Actual
+          description: HD Actual
+        - name: LastUpdate
+          description: Last Update
+
+
+
+
+
+
+
+
+

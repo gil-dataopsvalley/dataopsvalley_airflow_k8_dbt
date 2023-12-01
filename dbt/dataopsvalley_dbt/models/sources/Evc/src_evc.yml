@@ -1,0 +1,254 @@
+version: 2
+
+sources:
+  - name: src_evc
+    description: טופס של משרד העליה והקליטה במערכת יחד
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'evc']
+
+    tables:
+      - name: MRR_Evc_ironswordsAbsorptionAndImmigration_Roots
+        description: טבלה שמציגה נתונים מטופס של משרד העליה והקליטה במערכת יחד
+        columns:
+          - name: _RowIndex
+            description: מספר שורה
+          - name: id
+            description: מספר זהות
+            tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+          - name: immigrationYear_dataText
+            description: שנת עלייה (בחירה מתוך רשימת שנים)
+          - name: originCountry
+            description: ארץ מוצא (בחירה מתוך רשימת ארצות)
+          - name: areFamilyMembers
+            description: האם ברצונך לדווח על בני משפחה שהתפנו איתך? (כן,לא)
+          - name: translationAssistance
+            description:  האם אחד מבני המשפחה נדרש לסיוע או לתרגום של הנחיות ומידע ממשלתי לשפה שלך?
+          - name: language
+            description: שפה (בחירה מתוך רשימת שפות)
+          - name: economicHardship
+            description: האם יש מצוקה כלכלית? (כן,לא)
+          - name: detail
+            description: פרט
+          - name: knownbureau
+            description: האם אחד מבני המשפחה מוכר בלשכת הרווחה המקומית? (כן,לא)
+          - name: employment
+            description: מהו הסטאטוס התעסוקתי שלך? (שכיר/שכירה, עצמאי/עצמאית,עצמאי+שכיר)
+          - name: workplace
+            description: האם את/אתה ממשיך לעבוד במקום העבודה? (כן,לא)
+          - name: halat
+            description: האם הוצאת לחופשה ללא תשלום- חל"ת? (כן,לא)
+          - name: activeBusiness
+            description: האם העסק שלך פעיל כעת?  (כן,לא)
+          - name: detailActive
+            description:  פרט
+          - name: damagedBusiness
+            description: האם בית העסק נפגע במהלך מלחמת "חרבות ברזל"? (כן,לא)
+          - name: getToBusiness
+            description: האם אתה נדרש להגיע לעסק על מנת להפעילו? (כן,לא)
+          - name: damagedHouse
+            description: האם מקום מגוריך נפגע במהלך מלחמת "חרבות ברזל"? (כן,לא)
+          - name: appliedBefore
+            description: האם פנית מאז הפינוי למשרד העלייה והקליטה כדי לקבל שירות? (כן,לא)
+          - name: appliedAnser
+            description: האם קבלת מענה? (כן,לא)
+          - name: detailAppliedBefore
+            description: פרט
+          - name: referenceNumber
+            description: מספר סימוכין
+            tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+          - name: sentDate
+            description: תאריך שליחת הטופס
+          - name: FileName
+            description: שם הקובץ
+            tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+
+      - name: MRR_Evc_Ironswords_relativeRList
+        description: חרבות ברזל - טבלה שמציגה פרטים על אנשים נלווים , שהמפונה מדווח עליהם שפונו
+        columns:
+          - name: _RowIndex
+            description: אינדקס שורה
+          - name: FormName
+            description: שם הטופס
+          - name: _ParentKeyField
+            description: " "
+          - name: accompanyingRelation_dataCode
+            description: קרבה קוד (ילד/ילדה,בן/בת זוג,הורה,קטין נלווה,עובד/עובדת זר/זרה,אחר)
+          - name: accompanyingRelation_dataText
+            description: קרבה טקסט (ילד/ילדה,בן/בת זוג,הורה,קטין נלווה,עובד/עובדת זר/זרה,אחר)
+          - name: identify_dataCode
+            description: אמצעי זיהוי קוד (מספר זהות, דרכון)
+          - name: identify_dataText
+            description: אמצעי זיהוי טקסט (מספר זהות, דרכון)
+          - name: accompanyingId
+            description: מספר זהות
+            tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+          - name: foreignPassport
+            description: מספר דרכון זר
+          - name: birthYearF
+            description: שנת לידה
+          - name: genderF_dataCode
+            description: מגדר קוד (זכר,נקבה)
+          - name: genderF_dataText
+            description: מגדר טקסט (זכר,נקבה)
+          - name: place_dataCode
+            description: האם התפנה לאותו מקום זמני כמו של המדווח? קוד (כן,לא)
+          - name: place_dataText
+            description: האם התפנה לאותו מקום זמני כמו של המדווח? טקסט (כן,לא)
+          - name: accompanyingShelterType_dataCode
+            description: קוד סוג מקום שהייה זמני
+          - name: accompanyingShelterType_dataText
+            description: טקסט סוג מקום שהייה זמני
+          - name: detail
+            description: אחר - פרט
+          - name: accompanyingShelterCity_dataCode
+            description: מקלט מוסדר - קוד יישוב
+          - name: accompanyingShelterName_dataCode
+            description: מקלט מוסדר - קוד שם מקום השהייה
+          - name: accompanyingShelterName_dataText
+            description: מקלט מוסדר - טקסט שם מקום השהייה
+          - name: accompanyingShelterElse
+            description: הזנה ידנית של מקום השהייה - אחר
+          - name: accompanyingPrivateShelterCity_dataCode
+            description: מקלט לא מוסדר - קוד יישוב
+          - name: accompanyingPrivateShelterCity_dataText
+            description: מקלט לא מוסדר - שם יישוב
+          - name: FileName
+            description: שם הקובץ
+            tests:
+              - not_null
+              - relationships:
+                  to: source('src_evc', 'MRR_Evc_Ironswords_Roots')
+                  field: FileName
+                  config:
+                    severity: warn
+
+      - name: MRR_Evc_Ironswords_Roots
+        description: חרבות ברזל - טבלה שמכילה פרטים לגבי מפונים
+        columns:
+          - name: _RowIndex
+            description: אינדקס שורה
+          - name: FormName
+            description: שם הטופס
+          - name: id
+            description: מספר זהות
+            tests:
+              - not_null
+              - unique:
+                  config:
+                    severity: warn
+          - name: birthYear
+            description: שנת לידה
+          - name: Age
+            description: גיל
+          - name: AgeGroup
+            description: תווך גילאים
+          - name: gender_dataCode
+            description: קוד מגדר (זכר,נקבה)
+          - name: gender_dataText
+            description: שם מגדר (זכר,נקבה)
+          - name: fromCity_dataCode
+            description: קוד מקום מגורים קבוע - יישוב
+          - name: fromCity_dataText
+            description: שם מקום מגורים קבוע - יישוב
+          - name: quest_home_dataCode
+            description: קוד - האם כתובת המגורים המופיעה למעלה עדכנית?
+          - name: quest_home_dataText
+            description: טקסט - האם כתובת המגורים המופיעה למעלה עדכנית?
+          - name: newRomCity_dataCode
+            description: קוד עיר - עדכון עיר מגורים
+          - name: newRomCity_dataText
+            description: שם עיר - עדכון עיר מגורים
+          - name: dateHome
+            description: תאריך עזיבה של הבית
+          - name: shelterType_dataCode
+            description: קוד סוג מקום שהייה זמני
+          - name: shelterType_dataText
+            description: שם סוג מקום שהייה זמני
+          - name: shelterCity_dataCode
+            description: קוד יישוב מקלט מוסדר
+          - name: shelterCity_dataText
+            description: שם יישוב מקלט מוסדר
+          - name: shelterName_dataCode
+            description: קוד שם מקום השהייה
+          - name: shelterName_dataText
+            description: שם מקום השהייה
+          - name: x
+            description: אחר - הקלדה ידנית של מקום השהייה
+          - name: bankAccount_dataCode
+            description: אם מדובר במקלט לא מוסדר - קוד -  האם תרצה לקבל את הכסף לחשבון בנק שמוגדר בביטוח לאומי.
+          - name: bankAccount_dataText
+            description: אם מדובר במקלט לא מוסדר . טקסט - האם תרצה לקבל את הכסף לחשבון בנק שמוגדר בביטוח לאומי.
+          - name: ifPregnantifPregnant_dataCode
+            description: קוד - אם בהריון?
+          - name: ifPregnantifPregnant_dataText
+            description: טקסט - אם בהריון? כן\לא
+          - name: ifAccessible_dataCode
+            description: מקלט מוסדר - קוד - האם צריך מתקן נגיש? (כן,לא)
+          - name: ifAccessible_dataText
+            description: מקלט מוסדר - טקסט - האם צריך מתקן נגיש? (כן,לא)
+          - name: privateShelterCity_dataCode
+            description: מקלט לא מוסדר - קוד יישוב
+          - name: privateShelterCity_dataText
+            description: מקלט לא מוסדר - שם יישוב
+          - name: privateShelterStreet_dataCode
+            description: מקלט לא מוסדר - קוד רחוב
+          - name: privateShelterStreet_dataText
+            description: מקלט לא מוסדר - שם רחוב
+          - name: privateShelterHouseNum
+            description: מקלט לא מוסדר -מספר בית
+          - name: hasAnotherFamily_dataCode
+            description: האם ברצונך לדווח על בני משפחה נוספים? קוד - כן\לא
+          - name: hasAnotherFamily_dataText
+            description: האם ברצונך לדווח על בני משפחה נוספים? טקסט - כן\לא
+          - name: commitment
+            description: התחייבות שהפרטים שמולאו נכונים
+          - name: referenceNumber
+            description: מספר סימוכין
+            tests:
+              - unique
+              - not_null
+          - name: sentDate
+            description: תאריך שליחת הטופס
+          - name: FileName
+            description: שם הקובץ
+            tests:
+              - unique
+              - not_null
+
+      - name: MRR_Evc_ListEvacuatedTowns
+        description: טבלת רשויות מפונות בעקבות מלחמת חרבות ברזל
+        columns:
+          - name: SettelmentSymbolNumber
+            description: קוד יישוב מפונה
+          - name: SettelmentName
+            description: שם יישוב
+          - name: EvacuationDateDesc
+            description: תאריך תחילת פינוי היישוב
+          - name: EvacuationDate
+            description: תאריך פינוי
+          - name: Distance
+            description: מרחק היישוב מהגבול
+          - name: CouncilFullName
+            description: שם מלא של המועצה
+          - name: CouncilCode
+            description: קוד המועצה
+          - name: CouncilDistrict
+            description: מחוז המועצה - צפון\דרום

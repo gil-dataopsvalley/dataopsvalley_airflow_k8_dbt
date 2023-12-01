@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: src_sso_count_session_login
+    description: sso count session login
+    database: dgt-gcp-egov-test-govilbi-0
+    schema: GovilBiRepDS
+
+    tags: ['daily', 'sso']
+
+    tables:
+      - name: MRR_SSO_count_session_login
+        description: sso count session login table
+        columns:
+          - name: Date
+            description: Date
+          - name: CntDaily
+            description: CntDaily
+          - name: LastUpdate
+            description: Last Update
+          - name: sum_count_session_id
+            description: sum count session id
+          - name: count_succes
+            description: count succes
+          - name: count_fail
+            description: count fail

@@ -1,7 +1,7 @@
 FROM python:3.9.5
 
 ARG DBT_HOME=/home/dbtuser
-
+ARG DbtProjectName=dataopsvalley_dbt
 # Update and install system packages
 RUN apt-get update -y && \
   apt-get install --no-install-recommends -y -q \
@@ -32,4 +32,4 @@ RUN pip install --upgrade pip wheel setuptools
 RUN pip install dbt-bigquery
 
 COPY --chown=dbtuser:dbtuser ./dbt/profiles.yml ${DBT_HOME}/.dbt
-COPY --chown=dbtuser:dbtuser ./dbt/dgt_govil_dbt ${DBT_HOME}/dgt_govil_dbt
+COPY --chown=dbtuser:dbtuser ./dbt/${DbtProjectName} ${DBT_HOME}/dgt_govil_dbt

@@ -32,4 +32,4 @@ RUN pip install --upgrade pip wheel setuptools
 RUN pip install dbt-bigquery
 
 COPY --chown=dbtuser:dbtuser ./dbt/profiles.yml ${DBT_HOME}/.dbt
-COPY --chown=dbtuser:dbtuser ./dbt/dataopsvalley_dbt ${DBT_HOME}/dgt_govil_dbt
+COPY --chown=dbtuser:dbtuser ./dbt/${DbtProjectName} ${DBT_HOME}/dgt_govil_dbt
